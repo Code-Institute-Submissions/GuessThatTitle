@@ -1,7 +1,7 @@
 /* 
 1. Generic Styling 
 2. Navigation Bar
-
+3. Home Page Generals
 
 
 
@@ -56,5 +56,13 @@
     height: 80vh;
     background-color: red;
     width: 70%;
+    border-right: 0.5px solid lightgrey;
+    border-bottom: 0.5px solid lightgrey;
 }
 
+
+/* Home Page Generals */ 
+
+.page-body {
+    margin-top: 40px;
+}
