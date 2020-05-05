@@ -1,0 +1,60 @@
+/* 
+1. Generic Styling 
+2. Navigation Bar
+
+
+
+
+
+
+*/
+
+
+
+/* 1. Generic Styling */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.list-style-remove {
+    list-style: none;
+}
+
+.list-style-remove li {
+    text-decoration: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+/* 2. Nar-Bar */
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    height: 40px;
+    background-color: rgb(49, 29, 223);
+
+}
+
+.brand-title {
+      color: white;
+      font-size: 18px;
+      line-height: 40px;
+}
+
+.menu-button {
+    color: rgb(255, 255, 255);
+}
+
+.contain-menu {
+    margin-top: 40px;
+    height: 80vh;
+    background-color: red;
+    width: 70%;
+}
+
