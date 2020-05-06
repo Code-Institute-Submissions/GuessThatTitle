@@ -19,9 +19,10 @@ function getData (cb) {
 var el = document.getElementById("data");
 
 getData(function(data) {
-    data = data.Search;
+    data = data;
 
-    data.forEach(function(item){
-    el.innerHTML += "<p>" + item.Title + "</p>";
+    console.log(data);
+
+    /* data.forEach(function(item){
+    el.innerHTML += "<p>" + item.Title + "</p>"; */
     });
-});

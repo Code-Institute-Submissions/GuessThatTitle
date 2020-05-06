@@ -51,10 +51,10 @@
 			</div>
 		</div>
 
-	
+
 	</div>
 
-	<div class="page-body text-center">
+	<div class="page-body text-center d-none">
 		<div class="row">
 			<div class="col-12">
 				<p class="text-center mt-5">Welcome to MovieQuiz</p>
@@ -65,25 +65,62 @@
 		</div>
 	</div>
 
+	<div class="game-container">
+		
+        <div class="container round-number-container">
+			<div class="row">
+				<div class="col-12">
+					<h3>ROUND <span class="round-name"></span></h3>
+				</div>
+			</div>
+		
+        </div>
+
+        <div class="select-topic">
+        <div class="container">
+        <div class="row">
+        <div class="col-12">
+        <ul class="list-style-remove">
+        <li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic1"></button></li>
+        <li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic2"></button></li>
+       <li> <button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic3"></button></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        
+
+
+        </div>
 
 
 
 
 
-    <!--Menu Popup-->
+
+
+	</div>
+
+
+
+
+
+
+	<!--Menu Popup-->
 	<div class="contain-menu text-center pt-5" style="display: none">
-			<!--Basic List-->
-			<ul class="list-style-remove menu-list">
-				<li>Home</li>
-				<li>About this project</li>
-				<li>High Scores</li>
-				<li>Contact Us</li>
-			</ul>
+		<!--Basic List-->
+		<ul class="list-style-remove menu-list">
+			<li>Home</li>
+			<li>About this project</li>
+			<li>High Scores</li>
+			<li>Contact Us</li>
+		</ul>
 
-		</div>
+	</div>
 
 	<script src="assets/js/navigation.js"></script>
-<!-- 	<script src="assets/js/data.js"></script> -->
+	<!-- 	<script src="assets/js/data.js"></script> -->
+    <script src="assets/js/engine.js"></script>
 </body>
 
 </html>

@@ -2,8 +2,8 @@
 1. Generic Styling 
 2. Navigation Bar
 3. Home Page Generals
-
-
+4. Game Generals
+5. Choose Topic
 
 
 
@@ -85,7 +85,7 @@
 }
 
 
-/* Home Page Generals */ 
+/* 3. Home Page Generals */ 
 
 .page-body {
     margin-top: 40px;
@@ -100,4 +100,26 @@
 .how-to-btn {
      background-color: rgb(66, 62, 100);
     color: white;
+}
+
+
+/* 4. Game Generals */ 
+
+.game-container {
+    margin-top: 40px;
+}
+
+
+
+
+
+
+/* 5. Choose Topic */
+
+.choose-topic-btn {
+    height: 50px;
+    width: 200px;
+    color: white;
+    background-color: rgb(66, 62, 100);
+
 }
