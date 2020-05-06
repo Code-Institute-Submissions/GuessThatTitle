@@ -8,7 +8,7 @@ var pageNumber;
 var numberOfLives; // Store lives
 var numberOfPasses; // Store number of passes left
 var currentQuestionNumber; // Store what question they are on out of 10
-var questionNumber; // Track what question they are on (out of 10)
+var questionNumber = 1; // Track what question they are on (out of 10)
 var topic;
 var tempQuestion = []; // Store question data temp before pushing array into quesiton array
 var questions = []; // store questions for each round 
@@ -19,6 +19,8 @@ var timer; // used to display seconds left to answer question
 var questionText; // Store question text
 var yearClue; //  Store year film was made
 var lengthOfWord;
+var wordPosition;
+var answer;
 
 getTopics();
 
@@ -74,13 +76,14 @@ console.log("Topic Choosen: " + topic);
 // Now you need to generate the questions based on this topic
 // Hide Select Topic buttons 
 $(".select-topic").fadeIn('1000').addClass("d-none");
+$(".loading").removeClass("d-none");
 generateQuestion(); // Generate 6 questions (3 random movies from 2 random pages)
 }); 
 
 // Generate the question
 function generateQuestion() {
 // Called after data is gathered
-
+console.log("Question Number: " + questionNumber);
 function callApi(cb) {
 console.log("Getting data from page : " + pageNumber);
 var URL = "https://www.omdbapi.com/?apikey=c1466e63&s=" + topic + "&page=" + pageNumber; // Set url for query to api based on topic selected
@@ -154,8 +157,7 @@ for (i=0; i < 2; i++) {
 callApi(processData); // Call on the API to get movies based on topic from two random pages 
 pageNumber = y;
 }
-// At this point you have 6 questions stored in an array with their respective years
-questionNumber = 1; // Start questions
+
 // Call showQuestion 
 setTimeout(showQuestion, 3000); // Wait for arrayto poputate
 }
@@ -182,8 +184,9 @@ var rand;
 do {
 rand = Math.round(Math.random() * 10);
 } while (rand > titlelength || rand === 0);
-var wordPosition = rand - 1; // Array start at 0 
+wordPosition = rand - 1; // Array start at 0 
 console.log("What we are trying to replace: " + titlewords[wordPosition]);
+answer = titlewords[wordPosition];
 console.log("the current topic :" + topic);
 if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowerCase()) {
     lengthOfWord = titlewords[wordPosition].length;
@@ -205,13 +208,30 @@ console.log("question to be displayed: " + titlewords);
 // Build HTML 
 // Remove Loading Giff
 // Input question data into template 
+var displayQ = titlewords.toString();
+var displayQ2 = displayQ.replace(/,/g, " ");
 
 document.getElementById("question_number").innerHTML = questionNumber;
-
-
+$(".display-title").text(displayQ2);
+$(".display-question").removeClass("d-none");
+$(".loading").addClass("d-none");
+$(".display-answer").text(answer);
 // at the end of this increase Question Number so when it is called again it moves on to the next question
 }
 
+
+function checkAnswer () {
+    var check = $("#input-answer").val();
+    if(check.toString().toLowerCase() == answer.toString().toLowerCase()) {
+       $("#input-answer").css("border", "2px solid green"); 
+       setTimeout(nextQuestion, 1000);
+       questionNumber++;
+       generateQuestion();
+    }
+    else {
+          $("#input-answer").css("border", "2px solid black"); 
+    }
+}
 
 
 // Start the timer for each question
