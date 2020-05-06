@@ -226,7 +226,12 @@ function checkAnswer () {
        $("#input-answer").css("border", "2px solid green"); 
        setTimeout(nextQuestion, 1000);
        questionNumber++;
+       if (questionNumber < 4) {
        generateQuestion();
+       }
+       else {
+           console.log("Round complete");
+       }
     }
     else {
           $("#input-answer").css("border", "2px solid black"); 
