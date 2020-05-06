@@ -66,37 +66,42 @@
 	</div>
 
 	<div class="game-container">
-		
-        <div class="container round-number-container">
+
+		<div class="container round-number-container">
 			<div class="row">
 				<div class="col-12">
 					<h3>ROUND <span class="round-name"></span></h3>
 				</div>
 			</div>
-		
-        </div>
 
-        <div class="select-topic">
+		</div>
+
+		<div class="select-topic">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<ul class="list-style-remove">
+							<li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic1"></button>
+							</li>
+							<li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic2"></button>
+							</li>
+							<li> <button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic3"></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="display-question">
         <div class="container">
         <div class="row">
         <div class="col-12">
-        <ul class="list-style-remove">
-        <li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic1"></button></li>
-        <li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic2"></button></li>
-       <li> <button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic3"></button></li>
-        </ul>
+        <h5>Question <span id="display-question-number"></span></h5>
         </div>
         </div>
         </div>
-        
-
-
         </div>
-
-
-
-
-
 
 
 	</div>
@@ -120,7 +125,7 @@
 
 	<script src="assets/js/navigation.js"></script>
 	<!-- 	<script src="assets/js/data.js"></script> -->
-    <script src="assets/js/engine.js"></script>
+	<script src="assets/js/engine.js"></script>
 </body>
 
 </html>
