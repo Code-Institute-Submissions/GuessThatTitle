@@ -37,7 +37,7 @@
     position: fixed;
     top: 0;
     height: 40px;
-    background-color: rgb(49, 29, 223);
+    background-color: rgb(66, 62, 100);
 
 }
 
@@ -47,17 +47,41 @@
       line-height: 40px;
 }
 
+.menu-col {
+    height: 40px;
+}
+
 .menu-button {
-    color: rgb(255, 255, 255);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 5%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.logo-icon {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    right: 1%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
 .contain-menu {
-    margin-top: 40px;
-    height: 80vh;
-    background-color: red;
-    width: 70%;
-    border-right: 0.5px solid lightgrey;
-    border-bottom: 0.5px solid lightgrey;
+    position: fixed;
+    top: 40px;
+    height: 95vh;
+    background-color: rgb(66, 62, 100);
+    width: 100%;
+    color: white;
+}
+
+.menu-list li {
+    padding: 10px;
 }
 
 
@@ -65,4 +89,15 @@
 
 .page-body {
     margin-top: 40px;
+}
+
+
+.play-now-btn {
+    background-color: rgb(66, 62, 100);
+    color: white;
+}
+
+.how-to-btn {
+     background-color: rgb(66, 62, 100);
+    color: white;
 }
