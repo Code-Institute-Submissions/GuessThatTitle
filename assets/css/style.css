@@ -1,10 +1,11 @@
 /* 
 1. Generic Styling 
+1.1 Loading Gif
 2. Navigation Bar
 3. Home Page Generals
 4. Game Generals
 5. Choose Topic
-
+6. Display Question 
 
 
 */
@@ -30,6 +31,13 @@
     text-transform: uppercase;
 }
 
+/* 1.1 Loading Gif */ 
+
+.loading-img {
+
+    height: 150px;
+    width: 150px.
+}
 
 /* 2. Nar-Bar */
 
@@ -121,5 +129,16 @@
     width: 200px;
     color: white;
     background-color: rgb(66, 62, 100);
+
+}
+
+/* 6. Display Question */ 
+
+.display-question {
+    height: 95vh;
+}
+
+.question-number-title {
+    font-size: 18px;
 
 }

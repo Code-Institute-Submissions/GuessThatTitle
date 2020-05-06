@@ -18,6 +18,7 @@ var questions = []; // store questions for each round
 var timer; // used to display seconds left to answer question
 var questionText; // Store question text
 var yearClue; //  Store year film was made
+var lengthOfWord;
 
 getTopics();
 
@@ -71,6 +72,8 @@ $(".choose-topic-btn").click(function(){
 topic = $(this).text();
 console.log("Topic Choosen: " + topic);
 // Now you need to generate the questions based on this topic
+// Hide Select Topic buttons 
+$(".select-topic").fadeIn('1000').addClass("d-none");
 generateQuestion(); // Generate 6 questions (3 random movies from 2 random pages)
 }); 
 
@@ -105,7 +108,7 @@ function processData (info) {
         x = Math.round(Math.random() * 10);
         y = Math.round(Math.random() * 10);
         z = Math.round(Math.random() * 10);
-    }  while (x === y || y === z || z === x);
+    }  while (x === y || y === z || z === x || x === 0 || y === 0 || z === 0);
 
 
     var selected = movies.Search[x - 1]; 
@@ -143,7 +146,7 @@ function processData (info) {
         x = Math.round(Math.random() * 10);
         y = Math.round(Math.random() * 10);
      
-    }  while (x === y);
+    }  while (x === y || x === 0 || y === 0);
 
 // Get data from two random pages 
 pageNumber = x;
@@ -152,18 +155,64 @@ callApi(processData); // Call on the API to get movies based on topic from two r
 pageNumber = y;
 }
 // At this point you have 6 questions stored in an array with their respective years
-console.log(questions);
+questionNumber = 1; // Start questions
+// Call showQuestion 
+setTimeout(showQuestion, 3000); // Wait for arrayto poputate
+}
+
+
+function showQuestion() {
+movieTitleData = questions[questionNumber - 1][0];
+movieYearData = questions[questionNumber - 1][1];
+// Make choose topic container disappear and start displaying questions    
+// Use question number to select what data to manipulate 
+console.log("Movie Title: " + movieTitleData);
+console.log("Movie Year: " + movieYearData);
+
+// Break down the data 
+var titlewords = movieTitleData.split(" "); // Title stored in its own array
+var titlelength = titlewords.length;
+console.log("Title lendth : " + titlelength);
+// Remove a random word from the title that isn't the topic word
+
+
+function removeWord() {
+// Generate random number between the length of the title and 1
+var rand;
+do {
+rand = Math.round(Math.random() * 10);
+} while (rand > titlelength || rand === 0);
+var wordPosition = rand - 1; // Array start at 0 
+console.log("What we are trying to replace: " + titlewords[wordPosition]);
+console.log("the current topic :" + topic);
+if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowerCase()) {
+    lengthOfWord = titlewords[wordPosition].length;
+    console.log(lengthOfWord);
+    titlewords[wordPosition] =  "GUESS";
+}
+else {
+    removeWord(); // Call the function again if it choose the topic word
+}
 
 
 }
 
+// Call random word - Pick a word to be replaced - check that the word is not the topic word - if it is restart the function - if not replace it with 'guess'
+removeWord();
 
-/* Start Game function */
-function roundStart() {
-// Make choose topic container disappear and start displaying questions     
+console.log("question to be displayed: " + titlewords);
+
+// Build HTML 
+// Remove Loading Giff
+// Input question data into template 
+
+document.getElementById("question_number").innerHTML = questionNumber;
 
 
+// at the end of this increase Question Number so when it is called again it moves on to the next question
 }
+
+
 
 // Start the timer for each question
 function startTimer() {}
