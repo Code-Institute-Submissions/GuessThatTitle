@@ -186,7 +186,7 @@ setTimeout(showQuestion, 3000); // Wait for arrayto poputate
 
 function showQuestion() {
 
-// You have 4 questions stored in the question array (2 each taken from random pages on the search results)    
+
 
 console.log(questions);
 movieTitleData = questions[arrayPositionSelect - 1][0];
@@ -218,10 +218,15 @@ if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowe
     console.log(lengthOfWord);
     titlewords[wordPosition] =  "GUESS";
 }
+// Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
+// Check if the title is only one word and that word is the topic word 
+else if (titlewords.length === 1 && titlewords[wordPosition].toString().toLowerCase() === topic.toString().toLowerCase()){
+    lengthOfWord = titlewords[wordPosition].length;
+    console.log(lengthOfWord);
+    titlewords[wordPosition] =  "GUESS";
+}
 else {
-    removeWord(); // Call the function again if it choose the topic word 
-
-    // Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
+    removeWord();     // Call the function again if it choose the topic word 
 }
 
 
@@ -268,6 +273,9 @@ function startTimer() {}
 
 // When question is answered - move to next question
 function nextQuestion() {
+        // empty text area 
+       $("#input-answer").val(""); 
+      $("#input-answer").css("border", "2px solid black");
        questionNumber++;
        arrayPositionSelect++;
        if (questionNumber < 5) {
