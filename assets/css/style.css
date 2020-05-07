@@ -147,3 +147,10 @@
     color: black;
     font-size: 20px;
 }
+
+.skip-question-btn {
+    height: 40px;
+    width: 300px;
+    background-color: green;
+    color: white;
+}

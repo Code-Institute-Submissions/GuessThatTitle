@@ -5,7 +5,7 @@ var score; // Track their score
 var pageNumber;
 /* Change every Round*/
 
-var numberOfLives; // Store lives
+var numberOfLives = 1; // Store lives
 var numberOfPasses; // Store number of passes left
 var currentQuestionNumber; // Store what question they are on out of 10
 var questionNumber = 1; // Track what question they are on (out of 10)
@@ -194,7 +194,9 @@ if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowe
     titlewords[wordPosition] =  "GUESS";
 }
 else {
-    removeWord(); // Call the function again if it choose the topic word
+    removeWord(); // Call the function again if it choose the topic word 
+
+    // Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
 }
 
 
@@ -212,6 +214,7 @@ var displayQ = titlewords.toString();
 var displayQ2 = displayQ.replace(/,/g, " ");
 
 document.getElementById("question_number").innerHTML = questionNumber;
+document.getElementById("lives").innerHTML = numberOfLives; 
 $(".display-title").text(displayQ2);
 $(".display-question").removeClass("d-none");
 $(".loading").addClass("d-none");
@@ -222,16 +225,10 @@ $(".display-answer").text(answer);
 
 function checkAnswer () {
     var check = $("#input-answer").val();
+    // need to strip answer of special strings (, : ? etc)
     if(check.toString().toLowerCase() == answer.toString().toLowerCase()) {
        $("#input-answer").css("border", "2px solid green"); 
        setTimeout(nextQuestion, 1000);
-       questionNumber++;
-       if (questionNumber < 4) {
-       generateQuestion();
-       }
-       else {
-           console.log("Round complete");
-       }
     }
     else {
           $("#input-answer").css("border", "2px solid black"); 
@@ -242,17 +239,36 @@ function checkAnswer () {
 // Start the timer for each question
 function startTimer() {}
 
-// Submit answer
-function submitAnswer() {}
 
 // When question is answered - move to next question
-function nextQuestion() {}
+function nextQuestion() {
+       questionNumber++;
+       if (questionNumber < 4) {
+       generateQuestion();
+       }
+       else {
+           console.log("Round complete");
+           // Display next topics
+       }
+}
 
-// Lose a life if you get the answer wrong
-function lostLife() {}
+// Pass current question (costs a life)
+function skipQuestion() {
+   // Check if they have any lives left 
+   if (numberOfLives < 0) {
+       console.log("You gotz no lives left"); 
+       // Alert them that they have no lives
+       $(".skip-question-btn").text("Out of lives!");
+         $(".skip-question-btn").css("background-color", "red");
+   } 
+   else {
+   // Lose a life
+   numberOfLives--;
+   document.getElementById("lives").innerHTML = numberOfLives; 
+   nextQuestion(); // Call next question
+   }
 
-// Pass current question (costs a pass)
-function skipQuestion() {}
+}
 
 // Move to next round
 function nextRound() {}
@@ -268,7 +284,7 @@ function quit() {}
 // Restart the game
 function restart() {}
 
-/* Button listener */
-$(".play-now-btn").click(function () {
-  // Start the game
+$(".skip-question-btn").click(function(){
+skipQuestion();
 });
+
