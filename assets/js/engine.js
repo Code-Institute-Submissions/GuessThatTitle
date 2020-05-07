@@ -21,13 +21,41 @@ var yearClue; //  Store year film was made
 var lengthOfWord;
 var wordPosition;
 var answer;
+var arrayPositionSelect = 1;
 
-getTopics();
+
+$(".play-now-btn").click(function(){
+startGame();
+});
+
+
+// Called when the game is started
+function startGame() {
+    // Reset variables 
+    numberOfLives = 1;
+    questionNumber = 1;
+    roundPosition = 1;
+    arrayPositionSelect = 1;
+    getTopics();
+    displayTopicChoice();
+}
+
+
+
+
+function displayTopicChoice() {
+    // Pull up html for topic choice (remove-d-none)
+    $(".displayvar").addClass("d-none"); // Hide everything 
+    $(".select-topic").removeClass("d-none"); // Show topic choice
+}
+
+
+
 
 function getTopics() {
-  // get topics from json file - generate random number between 1 and 10 and select key and item based on that
 
-  // Request the data from the json file
+    questionNumber = 1;
+// Request the data from the json file
 
   function getData(setData) {
     var xhr = new XMLHttpRequest();
@@ -104,14 +132,14 @@ function processData (info) {
   // Select three random movie titles
   var x=1;
   var y=1;
-  var z=1;
+  
   
   // Generate three different random numbers (don't want same topic selected twice)
   do{
         x = Math.round(Math.random() * 10);
         y = Math.round(Math.random() * 10);
-        z = Math.round(Math.random() * 10);
-    }  while (x === y || y === z || z === x || x === 0 || y === 0 || z === 0);
+      
+    }  while (x === y || x === 0 || y === 0);
 
 
     var selected = movies.Search[x - 1]; 
@@ -133,14 +161,7 @@ function processData (info) {
     tempQuestion = [movieTitle, movieYear];
     questions.push(tempQuestion);
     
-    
-    var selected = movies.Search[z - 1]; 
-    console.log(selected);
-    var movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
-    var movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
-    // Create an array and then push into Questions Array
-    tempQuestion = [movieTitle, movieYear];
-    questions.push(tempQuestion);
+
 }
 // Generate two random numbers     
   var x=1;
@@ -164,8 +185,12 @@ setTimeout(showQuestion, 3000); // Wait for arrayto poputate
 
 
 function showQuestion() {
-movieTitleData = questions[questionNumber - 1][0];
-movieYearData = questions[questionNumber - 1][1];
+
+// You have 4 questions stored in the question array (2 each taken from random pages on the search results)    
+
+console.log(questions);
+movieTitleData = questions[arrayPositionSelect - 1][0];
+movieYearData = questions[arrayPositionSelect - 1][1];
 // Make choose topic container disappear and start displaying questions    
 // Use question number to select what data to manipulate 
 console.log("Movie Title: " + movieTitleData);
@@ -226,7 +251,8 @@ $(".display-answer").text(answer);
 function checkAnswer () {
     var check = $("#input-answer").val();
     // need to strip answer of special strings (, : ? etc)
-    if(check.toString().toLowerCase() == answer.toString().toLowerCase()) {
+    var stripAns = answer.replace(/[#?!,:]/g, "");
+    if(check.toString().toLowerCase() == stripAns.toString().toLowerCase()) {
        $("#input-answer").css("border", "2px solid green"); 
        setTimeout(nextQuestion, 1000);
     }
@@ -243,12 +269,13 @@ function startTimer() {}
 // When question is answered - move to next question
 function nextQuestion() {
        questionNumber++;
-       if (questionNumber < 4) {
-       generateQuestion();
+       arrayPositionSelect++;
+       if (questionNumber < 5) {
+       showQuestion(); // Dont need to call generate question (all questions generated)
        }
        else {
-           console.log("Round complete");
-           // Display next topics
+           roundComplete();
+           // Start Round
        }
 }
 
@@ -271,11 +298,31 @@ function skipQuestion() {
 }
 
 // Move to next round
-function nextRound() {}
+function startRound() {
+    // Anything else you need to do when a round is started
+    $(".message-to-player").addClass("d-none");
+    getTopics();
+    displayTopicChoice();
+}
+
+function nextRound() {
+// Increase round position number 
+roundPosition++;
+// Call topic selection
+startRound();
+// Vary timer settings   
+}
+
 
 // Round completed
 function roundComplete() {
-  console.log("Round completed");
+// Display round complete message 
+$(".displayvar").addClass("d-none"); // Hide everything 
+$(".message-to-player").text("Round Complete!").removeClass("d-none");
+// Wait 2 seconds and start next round  
+setTimeout(nextRound, 2000);
+    
+// Go to next round
 }
 
 // Quit the game

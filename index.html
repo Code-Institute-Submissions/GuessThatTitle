@@ -54,7 +54,9 @@
 
 	</div>
 
-	<div class="page-body text-center d-none">
+    <!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
+
+	<div class="page-body text-center displayvar">
 		<div class="row">
 			<div class="col-12">
 				<p class="text-center mt-5">Welcome to MovieQuiz</p>
@@ -66,7 +68,9 @@
 	</div>
 
 	<div class="game-container">
-		<div class="select-topic">
+
+		<!--Pick Topic at start of round-->
+		<div class="select-topic displayvar d-none">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -78,62 +82,74 @@
 							<li> <button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic3"></button>
 							</li>
 						</ul>
-                    
+
 					</div>
 				</div>
 			</div>
 		</div>
 
-        <div class="display-question d-none">
+        <!--Show questions-->
+		<div class="display-question displayvar d-none">
+			<div class="container">
+				<div class="row">
+					<div class="col-6 question-number-title text-center pt-3">Question
+						<span id="question_number"></span></div>
+					<div class="col-6">Lives: <span id="lives"></span></div>
+				</div>
+				<div class="row">
+					<div class="col-12 display-title"></div>
+					<div class="col-12 display-answer"></div>
+				</div>
+				<div class="row">
+					<div class="col-12 type-answer">
+						<textarea id="input-answer" oninput="checkAnswer()"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 type-answer">
+						<button class="btn skip-question-btn">Skip Question</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <!--Loading-->
+		<div class="loading displayvar d-none">
+			<img src="assets/images/loading/loading.gif">
+        </div>
+        
         <div class="container">
         <div class="row">
-        <div class="col-6 question-number-title text-center pt-3">Question <span id="question_number"></span></div>
-        <div class="col-6">Lives: <span id="lives"></span></div>
-        </div>
-        <div class="row">
-        <div class="col-12 display-title"></div>
-        <div class="col-12 display-answer"></div>
-        </div>
-        <div class="row">
-        <div class="col-12 type-answer">
-        <textarea id="input-answer" oninput="checkAnswer()"></textarea>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-12 type-answer">
-        <button class="btn skip-question-btn">Skip Question</button>
+        <div class="col-12">
+        <h2 class="message-to-player displayvar"></h2>
         </div>
         </div>
         </div>
-        </div>
-
-        <div class="loading d-none">
-        <img src="assets/images/loading/loading.gif">
-        </div>
+     
 
 
-	</div>
+		</div>
 
 
 
 
 
 
-	<!--Menu Popup-->
-	<div class="contain-menu text-center pt-5" style="display: none">
-		<!--Basic List-->
-		<ul class="list-style-remove menu-list">
-			<li>Home</li>
-			<li>About this project</li>
-			<li>High Scores</li>
-			<li>Contact Us</li>
-		</ul>
+		<!--Menu Popup-->
+		<div class="contain-menu text-center pt-5" style="display: none">
+			<!--Basic List-->
+			<ul class="list-style-remove menu-list">
+				<li>Home</li>
+				<li>About this project</li>
+				<li>High Scores</li>
+				<li>Contact Us</li>
+			</ul>
 
-	</div>
+		</div>
 
-	<script src="assets/js/navigation.js"></script>
-	<!-- 	<script src="assets/js/data.js"></script> -->
-	<script src="assets/js/engine.js"></script>
+		<script src="assets/js/navigation.js"></script>
+		<!-- 	<script src="assets/js/data.js"></script> -->
+		<script src="assets/js/engine.js"></script>
 </body>
 
 </html>
