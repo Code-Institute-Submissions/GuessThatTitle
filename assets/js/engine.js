@@ -5,14 +5,14 @@ var score; // Track their score
 var pageNumber;
 /* Change every Round*/
 
-var numberOfLives = 1; // Store lives
+var numberOfLives = 3; // Store lives
 var numberOfPasses; // Store number of passes left
 var currentQuestionNumber; // Store what question they are on out of 10
 var questionNumber = 1; // Track what question they are on (out of 10)
 var topic;
 var tempQuestion = []; // Store question data temp before pushing array into quesiton array
 var questions = []; // store questions for each round 
-
+var timerVal = 60;
 /* Change every question */
 
 var timer; // used to display seconds left to answer question
@@ -32,9 +32,10 @@ startGame();
 // Called when the game is started
 function startGame() {
     // Reset variables 
-    numberOfLives = 1;
+    numberOfLives = 3;
     questionNumber = 1;
     roundPosition = 1;
+    timerVal = 60;
     arrayPositionSelect = 1;
     getTopics();
     displayTopicChoice();
@@ -250,6 +251,12 @@ $(".display-question").removeClass("d-none");
 $(".loading").addClass("d-none");
 $(".display-answer").text(answer);
 // at the end of this increase Question Number so when it is called again it moves on to the next question
+
+// Clear the timer 
+clearInterval(timer);
+// Start Timer when everything is ready 
+startTimer();
+
 }
 
 
@@ -268,22 +275,54 @@ function checkAnswer () {
 
 
 // Start the timer for each question
-function startTimer() {}
+function startTimer() {
+timerVal = 60;
+// Use roundNumber to determine how quick it goes     
+// A minute for each question in Round 1 - Timer initial value is 60 seconds 
+$(".timer").text(timerVal);
+
+var timer = setInterval(countDown, 1000);
+
+function countDown () {
+    if (timerVal != 0) {
+    timerVal--;
+    $(".timer").text(timerVal);
+    }
+    else {
+    clearInterval(timer);
+    numberOfLives--;
+    document.getElementById("lives").innerHTML = numberOfLives;   
+    nextQuestion();
+}
+}
+
+}
+
+function restartTimer() {
+    // When the next question is called 
+}
+
 
 
 // When question is answered - move to next question
 function nextQuestion() {
+
+ 
         // empty text area 
        $("#input-answer").val(""); 
       $("#input-answer").css("border", "2px solid black");
        questionNumber++;
        arrayPositionSelect++;
-       if (questionNumber < 5) {
+       if (questionNumber < 5 && numberOfLives > 0) {
        showQuestion(); // Dont need to call generate question (all questions generated)
+       }
+       else if (numberOfLives < 0){
+
        }
        else {
            roundComplete();
            // Start Round
+       
        }
 }
 
@@ -294,7 +333,7 @@ function skipQuestion() {
        console.log("You gotz no lives left"); 
        // Alert them that they have no lives
        $(".skip-question-btn").text("Out of lives!");
-         $(".skip-question-btn").css("background-color", "red");
+       $(".skip-question-btn").css("background-color", "red");
    } 
    else {
    // Lose a life
@@ -338,6 +377,10 @@ function quit() {}
 
 // Restart the game
 function restart() {}
+
+// Called when they are out of lives (by skipping questions or running out of time)
+function gameOver() {}
+
 
 $(".skip-question-btn").click(function(){
 skipQuestion();

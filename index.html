@@ -46,7 +46,7 @@
 				<div class="col-12 text-center menu-col">
 					<i class="fas fa-bars menu-button d-inline-block"></i>
 					<i class="fas fa-video d-inline-block logo-icon"></i>
-					<h2 class="brand-title d-inline-block">Movie-Quiz</h2>
+					<h2 class="brand-title d-inline-block">Guess That Title</h2>
 				</div>
 			</div>
 		</div>
@@ -58,8 +58,7 @@
 
 	<div class="page-body text-center displayvar">
 		<div class="row">
-			<div class="col-12">
-				<p class="text-center mt-5">Welcome to MovieQuiz</p>
+			<div class="col-12 text-center">
 				<br/>
 				<button class="btn play-now-btn" data-role="none" data-ajax="false">Play Now</button>
 				<button class="btn how-to-btn" data-role="none" data-ajax="false">How to play</button>
@@ -69,17 +68,26 @@
 
 	<div class="game-container">
 
+    <div class="timer-container d-none">
+    <h2><span class="timer"></span> s</h2>
+    </div>
+
 		<!--Pick Topic at start of round-->
-		<div class="select-topic displayvar d-none">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
+		<div class="select-topic displayvar d-none pt-5">
+			<div class="container text-center">
+            <div class="row">
+            <div class="col-12">
+            Choose a topic
+            </div>
+            </div>
+				<div class="row pt-5 m-auto">
+					<div class="col-12 m-auto">
 						<ul class="list-style-remove">
-							<li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic1"></button>
+							<li><button class="choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic1"></button>
 							</li>
-							<li><button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic2"></button>
+							<li><button class="choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic2"></button>
 							</li>
-							<li> <button class="choose-topic-btn" data-role="none" data-ajax="false" id="topic3"></button>
+							<li> <button class="choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic3"></button>
 							</li>
 						</ul>
 
@@ -114,8 +122,8 @@
 		</div>
 
         <!--Loading-->
-		<div class="loading displayvar d-none">
-			<img src="assets/images/loading/loading.gif">
+		<div class="loading displayvar complete-center d-none">
+			<img class="loading-img" src="assets/images/loading/loading.gif">
         </div>
         
         <div class="container">
@@ -139,7 +147,7 @@
 		<div class="contain-menu text-center pt-5" style="display: none">
 			<!--Basic List-->
 			<ul class="list-style-remove menu-list">
-				<li>Home</li>
+				<li class="go-home">Home</li>
 				<li>About this project</li>
 				<li>High Scores</li>
 				<li>Contact Us</li>

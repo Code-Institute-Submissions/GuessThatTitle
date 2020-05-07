@@ -10,6 +10,9 @@
 
 */
 
+/* Import google gont */
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap');
+
 
 
 /* 1. Generic Styling */
@@ -17,6 +20,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Rubik', sans-serif;
 }
 
 .list-style-remove {
@@ -31,10 +35,23 @@
     text-transform: uppercase;
 }
 
+body {
+    background-color: #FFF;
+}
+
+.complete-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
 /* 1.1 Loading Gif */ 
 
 .loading-img {
-
     height: 60px;
     width: 60px;
 }
@@ -45,7 +62,7 @@
     position: fixed;
     top: 0;
     height: 40px;
-    background-color: rgb(66, 62, 100);
+    background-color: #1d3557;
 
 }
 
@@ -53,6 +70,7 @@
       color: white;
       font-size: 18px;
       line-height: 40px;
+      font-weight: 400;
 }
 
 .menu-col {
@@ -83,7 +101,7 @@
     position: fixed;
     top: 40px;
     height: 95vh;
-    background-color: rgb(66, 62, 100);
+    background-color: #1d3557;
     width: 100%;
     color: white;
 }
@@ -101,13 +119,18 @@
 
 
 .play-now-btn {
-    background-color: rgb(66, 62, 100);
+    background-color: #e63946;
     color: white;
 }
 
 .how-to-btn {
-     background-color: rgb(66, 62, 100);
+     background-color: #e63946;
     color: white;
+}
+
+#hero-logo {
+    height: 100px;
+    width: 300px;
 }
 
 
@@ -128,7 +151,7 @@
     height: 50px;
     width: 200px;
     color: white;
-    background-color: rgb(66, 62, 100);
+    background-color: #457b9d;
 
 }
 
