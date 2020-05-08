@@ -342,7 +342,7 @@ function nextQuestion() {
 // Pass current question (costs a life)
 function skipQuestion() {
    // Check if they have any lives left 
-   if (numberOfLives <= 0) {
+   if (numberOfLives < 1) {
        // Alert them that they have no lives
        $(".skip-question-btn").text("Out of lives!");
        $(".skip-question-btn").css("background-color", "red");
@@ -359,7 +359,7 @@ function skipQuestion() {
 // Move to next round
 function startRound() {
     // Anything else you need to do when a round is started
-    $(".message-to-player").addClass("d-none");
+    $(".splashscreen").addClass("d-none");
     getTopics();
     displayTopicChoice();
 }
@@ -377,7 +377,10 @@ startRound();
 function roundComplete() {
 // Display round complete message 
 $(".displayvar").addClass("d-none"); // Hide everything 
-$(".message-to-player").text("Round Complete!").removeClass("d-none");
+document.getElementById("icon-display").innerHTML = `<i class="fas fa-smile-wink style-face complete-center"></i>`;
+$(".message-to-player").text("Round Complete!");
+$(".splashscreen").removeClass("d-none");
+
 // Wait 2 seconds and start next round  
 setTimeout(nextRound, 2000);
     
@@ -393,7 +396,9 @@ function restart() {}
 // Called when they are out of lives (by skipping questions or running out of time)
 function gameOver() {
 $(".displayvar").addClass("d-none");
-$(".message-to-player").text("Game Over!").removeClass("d-none");
+document.getElementById("icon-display").innerHTML = `<i class="fas fa-sad-tear style-face complete-center"></i>`;
+$(".message-to-player").text("Game Over :( ");
+$(".splashscreen").removeClass("d-none");
 }
 
 
