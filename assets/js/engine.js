@@ -5,7 +5,7 @@ var score; // Track their score
 var pageNumber;
 /* Change every Round*/
 
-var numberOfLives = 3; // Store lives
+var numberOfLives; // Store lives
 var numberOfPasses; // Store number of passes left
 var currentQuestionNumber; // Store what question they are on out of 10
 var questionNumber = 1; // Track what question they are on (out of 10)
@@ -54,9 +54,9 @@ function displayTopicChoice() {
 
 
 function getTopics() {
+questionNumber = 1;
 clearInterval(timer); // Clear interval when new round is called 
 console.log("TIMER RESET");
-questionNumber = 1;
 // Request the data from the json file
 
 
@@ -191,8 +191,6 @@ setTimeout(showQuestion, 3000); // Wait for arrayto poputate
 
 function showQuestion() {
 
-
-
 console.log(questions);
 movieTitleData = questions[arrayPositionSelect - 1][0];
 movieYearData = questions[arrayPositionSelect - 1][1];
@@ -323,17 +321,18 @@ function nextQuestion() {
 
  
         // empty text area 
-       $("#input-answer").val(""); 
+      $("#input-answer").val(""); 
       $("#input-answer").css("border", "2px solid black");
        questionNumber++;
        arrayPositionSelect++;
-       if (questionNumber < 5 && numberOfLives > 0) {
+       if (questionNumber < 5 && numberOfLives >= 0) {
        showQuestion(); // Dont need to call generate question (all questions generated)
        }
        else if (numberOfLives < 0){
+        gameOver();
 
-       }
-       else {
+        }
+       else if (questionNumber >= 5){
            roundComplete();
            // Start Round
        
@@ -343,8 +342,7 @@ function nextQuestion() {
 // Pass current question (costs a life)
 function skipQuestion() {
    // Check if they have any lives left 
-   if (numberOfLives < 0) {
-       console.log("You gotz no lives left"); 
+   if (numberOfLives <= 0) {
        // Alert them that they have no lives
        $(".skip-question-btn").text("Out of lives!");
        $(".skip-question-btn").css("background-color", "red");
@@ -393,7 +391,10 @@ function quit() {}
 function restart() {}
 
 // Called when they are out of lives (by skipping questions or running out of time)
-function gameOver() {}
+function gameOver() {
+$(".displayvar").addClass("d-none");
+$(".message-to-player").text("Game Over!").removeClass("d-none");
+}
 
 
 $(".skip-question-btn").click(function(){
