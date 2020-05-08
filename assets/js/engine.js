@@ -302,7 +302,7 @@ function countDown () {
     }
     else {
     clearInterval(timer);
-    numberOfLives--;
+   loselife();
     document.getElementById("lives").innerHTML = numberOfLives;   
     nextQuestion(); 
 }
@@ -349,7 +349,7 @@ function skipQuestion() {
    } 
    else {
    // Lose a life
-   numberOfLives--;
+   loseLife();
    document.getElementById("lives").innerHTML = numberOfLives; 
    nextQuestion(); // Call next question
    }
@@ -383,9 +383,30 @@ $(".splashscreen").removeClass("d-none");
 
 // Wait 2 seconds and start next round  
 setTimeout(nextRound, 2000);
-    
 // Go to next round
 }
+
+
+
+
+function loseLife () {
+var x= 1;
+var shakeheart = setInterval(shake, 100);
+
+function shake () {
+    if (x < 5) {
+    $("#lives").toggleClass("d-none");
+    $(".lives-icon").toggleClass("d-none");
+    x++;
+    console.log("X is")
+    }
+    else {
+        clearInterval(shakeheart);
+    }
+}
+numberOfLives--;    
+}
+
 
 // Quit the game
 function quit() {}
