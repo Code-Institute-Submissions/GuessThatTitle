@@ -54,9 +54,11 @@ function displayTopicChoice() {
 
 
 function getTopics() {
-
-    questionNumber = 1;
+clearInterval(timer); // Clear interval when new round is called 
+console.log("TIMER RESET");
+questionNumber = 1;
 // Request the data from the json file
+
 
   function getData(setData) {
     var xhr = new XMLHttpRequest();
@@ -87,6 +89,8 @@ function getTopics() {
    var topicTwo = jsonData[Object.keys(jsonData)[y -1]];  
    var topicThree = jsonData[Object.keys(jsonData)[z -1]];  
 
+   // Set round number 
+   document.getElementById("round-number").innerHTML = roundPosition; 
    
    document.getElementById("topic1").innerHTML = topicOne; 
    document.getElementById("topic2").innerHTML = topicTwo; 
@@ -254,6 +258,7 @@ $(".display-answer").text(answer);
 
 // Clear the timer 
 clearInterval(timer);
+console.log("TIMER RESET");
 // Start Timer when everything is ready 
 startTimer();
 
@@ -276,12 +281,21 @@ function checkAnswer () {
 
 // Start the timer for each question
 function startTimer() {
-timerVal = 60;
+
+// Cap timer at 10 seconds so it can't go any lower    
+if (timerVal == 10) {
+    timerVal = 10;
+}    
+else {
+timerVal = 60 / roundPosition;
+}
+
+clearInterval(timer);
 // Use roundNumber to determine how quick it goes     
 // A minute for each question in Round 1 - Timer initial value is 60 seconds 
 $(".timer").text(timerVal);
 
-var timer = setInterval(countDown, 1000);
+timer = setInterval(countDown, 1000);
 
 function countDown () {
     if (timerVal != 0) {
@@ -292,7 +306,7 @@ function countDown () {
     clearInterval(timer);
     numberOfLives--;
     document.getElementById("lives").innerHTML = numberOfLives;   
-    nextQuestion();
+    nextQuestion(); 
 }
 }
 

@@ -68,13 +68,14 @@
 
 	<div class="game-container">
 
-    <div class="timer-container d-none">
-    <h2><span class="timer"></span> s</h2>
-    </div>
-
 		<!--Pick Topic at start of round-->
-		<div class="select-topic displayvar d-none pt-5">
+		<div class="select-topic displayvar pt-5 d-none">
 			<div class="container text-center">
+            <div class="row">
+            <div class="col-12">
+            Round <span id="round-number"></span>
+            </div>
+            </div>
             <div class="row">
             <div class="col-12">
             Choose a topic
@@ -98,12 +99,15 @@
 
         <!--Show questions-->
 		<div class="display-question displayvar d-none">
+        <div class="row">
+        <div class="col-12 contain-game-headings text-center">
+         <p class="display-timer"><span class="timer"></span>s</p>
+         <p class="question-number-container"><span id="question_number"></span> / 4</p>
+         <p class="display-lives"><span id="lives"></span><i class="fas fa-heart lives-icon"></i></p>
+         </div>
+         </div>
+      
 			<div class="container">
-				<div class="row">
-					<div class="col-6 question-number-title text-center pt-3">Question
-						<span id="question_number"></span></div>
-					<div class="col-6">Lives: <span id="lives"></span></div>
-				</div>
 				<div class="row">
 					<div class="col-12 display-title"></div>
 					<div class="col-12 display-answer"></div>

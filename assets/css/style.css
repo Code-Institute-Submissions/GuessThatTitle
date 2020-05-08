@@ -177,3 +177,25 @@ body {
     background-color: green;
     color: white;
 }
+
+.contain-game-headings {
+    position: relative;
+}
+
+
+
+.question-number-container {
+    position: absolute;
+    top: 0;
+    left: 35px;
+}
+
+.display-lives {
+     position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.lives-icon {
+    color: red;
+}
