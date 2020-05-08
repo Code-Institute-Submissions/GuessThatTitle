@@ -302,7 +302,7 @@ function countDown () {
     }
     else {
     clearInterval(timer);
-   loselife();
+   loseLife();
     document.getElementById("lives").innerHTML = numberOfLives;   
     nextQuestion(); 
 }
