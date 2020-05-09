@@ -31,17 +31,23 @@ startGame();
 
 // Called when the game is started
 function startGame() {
-    // Reset variables 
+    setVars();
+    getTopics();
+    displayTopicChoice();
+    $(".menu1").addClass("d-none");
+    $(".menu2").removeClass("d-none");
+    console.log("show menu");
+}
+
+// Set variable values for start of game
+function setVars() {
     numberOfLives = 3;
     questionNumber = 1;
     roundPosition = 1;
     timerVal = 60;
     arrayPositionSelect = 1;
-    getTopics();
-    displayTopicChoice();
+    clearInterval(timer);
 }
-
-
 
 
 function displayTopicChoice() {
@@ -297,12 +303,16 @@ timer = setInterval(countDown, 1000);
 
 function countDown () {
     if (timerVal != 0) {
+      if (timerVal <= 10) {
+          $(".timer").css("color", "red");
+      }  
     timerVal--;
-    $(".timer").text(timerVal);
+    $(".timer").hide().fadeIn("1000").text(timerVal);
     }
     else {
     clearInterval(timer);
-   loseLife();
+    $(".timer").css("color", "grey"); // Reset color    
+    loseLife();
     document.getElementById("lives").innerHTML = numberOfLives;   
     nextQuestion(); 
 }
@@ -407,12 +417,20 @@ function shake () {
 numberOfLives--;    
 }
 
+$(".end-game").click(function(){
+quit();
+});
 
 // Quit the game
-function quit() {}
+function quit() {
+$(".menu1").removeClass("d-none");
+$(".menu2").addClass("d-none");
+$(".displayvar").addClass("d-none");
+$(".contain-menu").toggle("slidedown");
+$(".page-body").removeClass("d-none");  
+setVars();
+}
 
-// Restart the game
-function restart() {}
 
 // Called when they are out of lives (by skipping questions or running out of time)
 function gameOver() {
@@ -420,6 +438,7 @@ $(".displayvar").addClass("d-none");
 document.getElementById("icon-display").innerHTML = `<i class="fas fa-sad-tear style-face complete-center"></i>`;
 $(".message-to-player").text("Game Over :( ");
 $(".splashscreen").removeClass("d-none");
+setVars();
 }
 
 

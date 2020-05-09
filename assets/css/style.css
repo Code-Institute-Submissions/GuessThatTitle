@@ -5,7 +5,8 @@
 3. Home Page Generals
 4. Game Generals
 5. Choose Topic
-6. Display Question 
+6. Display Question
+6.1 Timer Styling 
 7. Splash Screen (Game Over/Round Complete)
 
 */
@@ -200,6 +201,15 @@ body {
 
 .lives-icon {
     color: red;
+}
+
+
+/* 6.1 Timer Styling */ 
+
+.display-timer {
+    color: grey;
+    opacity: 0.7;
+    font-size: 35px;
 }
 
 /* 7. Splash Screen */

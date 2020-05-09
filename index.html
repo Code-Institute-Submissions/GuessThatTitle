@@ -54,7 +54,7 @@
 
 	</div>
 
-    <!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
+	<!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
 
 	<div class="page-body text-center displayvar">
 		<div class="row">
@@ -71,16 +71,16 @@
 		<!--Pick Topic at start of round-->
 		<div class="select-topic displayvar pt-5 d-none">
 			<div class="container text-center">
-            <div class="row">
-            <div class="col-12">
-            Round <span id="round-number"></span>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-12">
-            Choose a topic
-            </div>
-            </div>
+				<div class="row">
+					<div class="col-12">
+						Round <span id="round-number"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						Choose a topic
+					</div>
+				</div>
 				<div class="row pt-5 m-auto">
 					<div class="col-12 m-auto">
 						<ul class="list-style-remove">
@@ -97,16 +97,16 @@
 			</div>
 		</div>
 
-        <!--Show questions-->
+		<!--Show questions-->
 		<div class="display-question displayvar d-none">
-        <div class="row">
-        <div class="col-12 contain-game-headings text-center">
-         <p class="display-timer"><span class="timer"></span>s</p>
-         <p class="question-number-container"><span id="question_number"></span> / 4</p>
-         <p class="display-lives"><span id="lives"></span><i class="fas fa-heart lives-icon"></i></p>
-         </div>
-         </div>
-      
+			<div class="row">
+				<div class="col-12 contain-game-headings text-center">
+					<p class="display-timer"><span class="timer"></span>s</p>
+					<p class="question-number-container"><span id="question_number"></span> / 4</p>
+					<p class="display-lives"><span id="lives"></span><i class="fas fa-heart lives-icon"></i></p>
+				</div>
+			</div>
+
 			<div class="container">
 				<div class="row">
 					<div class="col-12 display-title"></div>
@@ -125,39 +125,38 @@
 			</div>
 		</div>
 
-        <!--Loading-->
+		<!--Loading-->
 		<div class="loading displayvar complete-center d-none">
 			<img class="loading-img" src="assets/images/loading/loading.gif">
         </div>
-        
-        <div class="container splashscreen displayvar text-center d-none">
-        <div id="icon-display"></div>
-        <h2 class="message-to-player complete-center"></h2>
-        </div>
-     
+
+			<div class="container splashscreen displayvar text-center d-none">
+				<div id="icon-display"></div>
+				<h2 class="message-to-player complete-center"></h2>
+			</div>
+
 
 		</div>
-
-
-
-
 
 
 		<!--Menu Popup-->
 		<div class="contain-menu text-center pt-5" style="display: none">
 			<!--Basic List-->
-			<ul class="list-style-remove menu-list">
+			<ul class="list-style-remove menu-list menu1">
 				<li class="go-home">Home</li>
-                <li class="play-game">Play Game</li>
-                <li class="how-to">How to Play</li>
+				<li class="play-game">Play Game</li>
+				<li class="how-to">How to Play</li>
 				<li>About</li>
 				<li>Contact Us</li>
+			</ul>
+			<ul class="list-style-remove menu-list menu2 d-none">
+				<li class="end-game">Quit</li>
 			</ul>
 
 		</div>
 
+        <!--Load Scripts-->
 		<script src="assets/js/navigation.js"></script>
-		<!-- 	<script src="assets/js/data.js"></script> -->
 		<script src="assets/js/engine.js"></script>
 </body>
 
