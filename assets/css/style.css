@@ -1,8 +1,12 @@
 /* 
+
 1. Generic Styling 
 1.1 Loading Gif
 2. Navigation Bar
 3. Home Page Generals
+3.1 Hero Text
+3.2 Buttons
+3.3 Socials list
 4. Game Generals
 5. Choose Topic
 6. Display Question
@@ -37,7 +41,9 @@
 }
 
 body {
-    background-color: #FFF;
+background-image: url("../images/bg/pop.png");
+background-position: center center;
+background-size: cover;
 }
 
 .complete-center {
@@ -65,12 +71,11 @@ body {
     position: fixed;
     top: 0;
     height: 7vh;
-    background-color: #1d3557;
-
+    background-color: none;
 }
 
 .brand-title {
-      color: white;
+      color: rgb(0, 0, 0);
       font-size: 18px;
       line-height: 7vh;
       font-weight: 400;
@@ -87,7 +92,7 @@ body {
     left: 5%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .logo-icon {
@@ -97,16 +102,16 @@ body {
     right: 1%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .contain-menu {
     position: fixed;
     top: 7vh;
     height: 93vh;
-    background-color: #1d3557;
+    background-color: #F1EFED;
     width: 100%;
-    color: white;
+    color: #212429;
 }
 
 .menu-list li {
@@ -120,21 +125,77 @@ body {
     margin-top: 7vh;
 }
 
+/* 3.1 Hero Text */ 
+
+.hero-heading {
+    line-height: 0;
+    padding: 10px;
+}
+
+.hero-film-logo {
+    font-size: 80px;
+    padding: 10px;
+}
+
+.hero-text-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.hero-text-lower {
+   line-height: 0; 
+   font-size:60px;
+   letter-spacing: 2px;
+}
+
+/* 3.2 Butotns */
+
 
 .play-now-btn {
     background-color: #e63946;
-    color: white;
+    color: #F1EFED;
+    width: 150px;
+    height: 50px;
+    padding: 5px;
+    
 }
 
 .how-to-btn {
      background-color: #e63946;
-    color: white;
+    color: #F1EFED;
+    width: 150px;
+    padding: 5px;
+        height: 50px;
+}    
+
+
+/* 3.3 Socials List */
+
+
+.socials-row {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+
 }
 
-#hero-logo {
-    height: 100px;
-    width: 300px;
+.socials-row h6 {
+    margin: 0;
 }
+.socials-list {
+    margin: 0 !important;
+}
+
+.socials-list li{
+    display: inline-block;
+    font-size: 24px;
+}
+
+
 
 
 /* 4. Game Generals */ 
@@ -142,10 +203,6 @@ body {
 .game-container {
     margin-top: 7vh;
 }
-
-
-
-
 
 
 /* 5. Choose Topic */
