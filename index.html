@@ -92,22 +92,22 @@
 			<div class="container text-center">
 				<div class="row">
 					<div class="col-12">
-						Round <span id="round-number"></span>
+						<h2 class="round-number-text">Round <span id="round-number"></span></h2>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12">
-						Choose a topic
+						<h5 class="choose-topic-text">Choose a topic</h5>
 					</div>
 				</div>
 				<div class="row pt-5 m-auto">
 					<div class="col-12 m-auto">
 						<ul class="list-style-remove">
-							<li><button class="choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic1"></button>
+							<li><button class="btn choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic1"></button>
 							</li>
-							<li><button class="choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic2"></button>
+							<li><button class="btn choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic2"></button>
 							</li>
-							<li> <button class="choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic3"></button>
+							<li> <button class="btn choose-topic-btn m-3" data-role="none" data-ajax="false" id="topic3"></button>
 							</li>
 						</ul>
 
@@ -121,7 +121,7 @@
 			<div class="row">
 				<div class="col-12 contain-game-headings text-center">
 					<p class="display-timer"><span class="timer"></span>s</p>
-					<p class="question-number-container"><span id="question_number"></span> / 4</p>
+					<h6 class="question-number-container"><span id="question_number"></span> / 4</h6>
 					<p class="display-lives"><span id="lives"></span><i class="fas fa-heart lives-icon"></i></p>
 				</div>
 			</div>
@@ -132,8 +132,8 @@
 					<div class="col-12 display-answer"></div>
 				</div>
 				<div class="row">
-					<div class="col-12 type-answer">
-						<textarea id="input-answer" oninput="checkAnswer()"></textarea>
+					<div class="col-12 type-answer text-center">
+						<textarea id="input-answer" class="text-center" size="20" data-role = "none" data-ajax="none" placeholder="Type Answer Here" oninput="checkAnswer()"></textarea>
 					</div>
 				</div>
 				<div class="row">
@@ -141,6 +141,11 @@
 						<button class="btn skip-question-btn">Skip Question</button>
 					</div>
 				</div>
+                <div class="row">
+                <div class="col-12">
+                <h3 id="correct" class="d-none">Correct!</h3>
+                </div>
+                </div>
 			</div>
 		</div>
 
@@ -150,7 +155,6 @@
         </div>
 
 			<div class="container splashscreen displayvar text-center d-none">
-				<div id="icon-display"></div>
 				<h2 class="message-to-player complete-center"></h2>
 			</div>
 

@@ -211,8 +211,17 @@ background-size: cover;
     height: 50px;
     width: 200px;
     color: white;
-    background-color: #457b9d;
+    background-color: #e63946;
+    border: none;
 
+}
+
+.round-number-text {
+    font-size: 40px;
+}
+.choose-topic-text {
+    color: #e63946;
+    font-size: 16px;
 }
 
 /* 6. Display Question */ 
@@ -234,14 +243,13 @@ background-size: cover;
 .skip-question-btn {
     height: 40px;
     width: 300px;
-    background-color: green;
+    background-color: #212429;
     color: white;
 }
 
 .contain-game-headings {
     position: relative;
 }
-
 
 
 .question-number-container {
@@ -257,7 +265,19 @@ background-size: cover;
 }
 
 .lives-icon {
-    color: red;
+    color: #e63946;
+}
+
+#input-answer {
+    outline: none;
+    height: 50px;
+    width: 280px;
+    line-height: 50px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #212429;
+    padding: none !important;
 }
 
 
@@ -273,7 +293,6 @@ background-size: cover;
 
 .splashscreen {
     height: 93vh;
-    background-color: #1d3557 !important;
     position: relative;
 }
 
@@ -284,6 +303,6 @@ background-size: cover;
 }
 
 .message-to-player {
-    color: white;
+    color: #212429;
     margin-top: 0px;
 }

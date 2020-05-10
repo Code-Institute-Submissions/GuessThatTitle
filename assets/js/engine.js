@@ -25,18 +25,26 @@ var arrayPositionSelect = 1;
 
 
 $(".play-now-btn").click(function(){
-startGame();
+ $(".displayvar").addClass("d-none");
+$(".message-to-player").text("GOOD LUCK!");
+$(".splashscreen").hide().fadeIn(500).removeClass("d-none");   
+setTimeout(startGame, 3000); 
+
 });
 
 
 // Called when the game is started
 function startGame() {
     setVars();
-    getTopics();
+   getTopics();
     displayTopicChoice();
     $(".menu1").addClass("d-none");
     $(".menu2").removeClass("d-none");
     console.log("show menu");
+}
+
+function transition() {
+
 }
 
 // Set variable values for start of game
@@ -225,14 +233,14 @@ console.log("the current topic :" + topic);
 if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowerCase()) {
     lengthOfWord = titlewords[wordPosition].length;
     console.log(lengthOfWord);
-    titlewords[wordPosition] =  "GUESS";
+    titlewords[wordPosition] = "_______";
 }
 // Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
 // Check if the title is only one word and that word is the topic word 
 else if (titlewords.length === 1 && titlewords[wordPosition].toString().toLowerCase() === topic.toString().toLowerCase()){
     lengthOfWord = titlewords[wordPosition].length;
     console.log(lengthOfWord);
-    titlewords[wordPosition] =  "GUESS";
+    titlewords[wordPosition] =  "_______";
 }
 else {
     removeWord();     // Call the function again if it choose the topic word 
@@ -274,11 +282,12 @@ function checkAnswer () {
     // need to strip answer of special strings (, : ? etc)
     var stripAns = answer.replace(/[#?!,:]/g, "");
     if(check.toString().toLowerCase() == stripAns.toString().toLowerCase()) {
-       $("#input-answer").css("border", "2px solid green"); 
-       setTimeout(nextQuestion, 1000);
+       $("#input-answer").css("color", "green"); 
+       $("#correct").fadeIn(500).toggleClass("d-none");
+       setTimeout(nextQuestion, 2000);
     }
     else {
-          $("#input-answer").css("border", "2px solid black"); 
+          $("#input-answer").css("color", "#212429"); 
     }
 }
 
@@ -330,9 +339,10 @@ function restartTimer() {
 function nextQuestion() {
 
  
-        // empty text area 
+      // empty text area and remove message
+      $("#correct").fadeIn(500).addClass("d-none");
       $("#input-answer").val(""); 
-      $("#input-answer").css("border", "2px solid black");
+      $("#input-answer").css("color", "#212429");
        questionNumber++;
        arrayPositionSelect++;
        if (questionNumber < 5 && numberOfLives >= 0) {
@@ -387,10 +397,8 @@ startRound();
 function roundComplete() {
 // Display round complete message 
 $(".displayvar").addClass("d-none"); // Hide everything 
-document.getElementById("icon-display").innerHTML = `<i class="fas fa-smile-wink style-face complete-center"></i>`;
 $(".message-to-player").text("Round Complete!");
 $(".splashscreen").removeClass("d-none");
-
 // Wait 2 seconds and start next round  
 setTimeout(nextRound, 2000);
 // Go to next round
