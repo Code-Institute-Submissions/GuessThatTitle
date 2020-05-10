@@ -54,6 +54,7 @@ function setVars() {
     roundPosition = 1;
     timerVal = 60;
     arrayPositionSelect = 1;
+    questions = [];
     clearInterval(timer);
 }
 
@@ -93,15 +94,21 @@ console.log("TIMER RESET");
   
   // Generate three different random numbers (don't want same topic selected twice)
   do{
-        x = Math.ceil(Math.random() * 10);
-        y = Math.ceil(Math.random() * 10);
-        z = Math.ceil(Math.random() * 10);
+        x = Math.ceil(Math.random() * 20);
+        y = Math.ceil(Math.random() * 20);
+        z = Math.ceil(Math.random() * 20);
     }  while (x === y || y === z || z === x);
+
+  
 
    // Select Topics from JSON (need to minus one since array starts at 0)
    var topicOne = jsonData[Object.keys(jsonData)[x - 1]];
    var topicTwo = jsonData[Object.keys(jsonData)[y -1]];  
    var topicThree = jsonData[Object.keys(jsonData)[z -1]];  
+
+    console.log("X :" + x);
+    console.log("Y :" + y);
+    console.log("Z :" + z);
 
    // Set round number 
    document.getElementById("round-number").innerHTML = roundPosition; 
@@ -204,7 +211,7 @@ setTimeout(showQuestion, 3000); // Wait for arrayto poputate
 
 
 function showQuestion() {
-
+console.log("Array Output");
 console.log(questions);
 movieTitleData = questions[arrayPositionSelect - 1][0];
 movieYearData = questions[arrayPositionSelect - 1][1];
@@ -230,36 +237,49 @@ wordPosition = rand - 1; // Array start at 0
 console.log("What we are trying to replace: " + titlewords[wordPosition]);
 answer = titlewords[wordPosition];
 console.log("the current topic :" + topic);
-
+answer = answer.replace(/[#?!,:]/g, "");
 // Use answer length to generate string to replace missing word with 
 
 var replacement = [];
-for (i=0; i < answer.length; i++) {
+
+// If answer is just one letter - replace it with an underline 
+// If answer is greater than one - replace the remaining letters with underline
+
+if (answer.length === 1) {
+for (i=0; i < (answer.length); i++) {
+    replacement[i] = ["_"];
+} 
+}
+else {
+for (i=0; i < (answer.length -1); i++) {
     replacement[i] = ["_"];
 }
+}
 
-var string = replacement.join();
+
+
+
+var string = answer[0] + replacement.join();
 string.replace(/,/g, "");
-
 
 if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowerCase()) {
     lengthOfWord = titlewords[wordPosition].length;
     console.log(lengthOfWord);
-    titlewords[wordPosition] = string + " ";
+    titlewords[wordPosition] = `${string}`;
 }
 // Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
 // Check if the title is only one word and that word is the topic word 
 else if (titlewords.length === 1 && titlewords[wordPosition].toString().toLowerCase() === topic.toString().toLowerCase()){
     lengthOfWord = titlewords[wordPosition].length;
     console.log(lengthOfWord);
-    titlewords[wordPosition] =  string + " ";
+    titlewords[wordPosition] =  `${string}`;
 }
 else {
     removeWord();     // Call the function again if it choose the topic word 
 }
 
-
 }
+
 
 // Call random word - Pick a word to be replaced - check that the word is not the topic word - if it is restart the function - if not replace it with 'guess'
 removeWord();
@@ -277,7 +297,7 @@ document.getElementById("lives").innerHTML = numberOfLives;
 $(".display-title").text(displayQ2);
 $(".display-question").removeClass("d-none");
 $(".loading").addClass("d-none");
-$(".display-answer").text(answer);
+
 // at the end of this increase Question Number so when it is called again it moves on to the next question
 
 // Clear the timer 
@@ -290,7 +310,14 @@ startTimer();
 
 
 function checkAnswer () {
-    var check = $("#input-answer").val();
+    if (answer.length == 1) {
+        var check = $("#input-answer").val();
+    }
+    else {
+    var check = answer[0] + $("#input-answer").val();
+    }
+
+
     // need to strip answer of special strings (, : ? etc)
     var stripAns = answer.replace(/[#?!,:]/g, "");
     if(check.toString().toLowerCase() == stripAns.toString().toLowerCase()) {
@@ -442,12 +469,13 @@ quit();
 
 // Quit the game
 function quit() {
+setVars();
 $(".menu1").removeClass("d-none");
 $(".menu2").addClass("d-none");
 $(".displayvar").addClass("d-none");
 $(".contain-menu").toggle("slidedown");
 $(".page-body").removeClass("d-none");  
-setVars();
+
 }
 
 
