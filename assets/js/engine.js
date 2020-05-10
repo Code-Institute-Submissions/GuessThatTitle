@@ -230,17 +230,29 @@ wordPosition = rand - 1; // Array start at 0
 console.log("What we are trying to replace: " + titlewords[wordPosition]);
 answer = titlewords[wordPosition];
 console.log("the current topic :" + topic);
+
+// Use answer length to generate string to replace missing word with 
+
+var replacement = [];
+for (i=0; i < answer.length; i++) {
+    replacement[i] = ["_"];
+}
+
+var string = replacement.join();
+string.replace(/,/g, "");
+
+
 if (titlewords[wordPosition].toString().toLowerCase() != topic.toString().toLowerCase()) {
     lengthOfWord = titlewords[wordPosition].length;
     console.log(lengthOfWord);
-    titlewords[wordPosition] = "_______";
+    titlewords[wordPosition] = string + " ";
 }
 // Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
 // Check if the title is only one word and that word is the topic word 
 else if (titlewords.length === 1 && titlewords[wordPosition].toString().toLowerCase() === topic.toString().toLowerCase()){
     lengthOfWord = titlewords[wordPosition].length;
     console.log(lengthOfWord);
-    titlewords[wordPosition] =  "_______";
+    titlewords[wordPosition] =  string + " ";
 }
 else {
     removeWord();     // Call the function again if it choose the topic word 
@@ -401,7 +413,6 @@ $(".message-to-player").text("Round Complete!");
 $(".splashscreen").removeClass("d-none");
 // Wait 2 seconds and start next round  
 setTimeout(nextRound, 2000);
-// Go to next round
 }
 
 
