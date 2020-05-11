@@ -75,7 +75,8 @@ background-color: #F1EFED;
     position: fixed;
     top: 0;
     height: 7vh;
-    background-color: none;
+    background-color:#EAE8E5;
+    z-index: 2;
 }
 
 .brand-title {
@@ -99,7 +100,7 @@ background-color: #F1EFED;
     color: rgb(0, 0, 0);
 }
 
-.logo-icon {
+.audio-icon {
     position: absolute;
     margin: 0;
     top: 50%;
@@ -113,7 +114,7 @@ background-color: #F1EFED;
     position: fixed;
     top: 7vh;
     height: 93vh;
-    background-color: #F1EFED;
+    background-color: #EAE8E5;
     width: 100%;
     color: #212429;
 }
@@ -127,6 +128,7 @@ background-color: #F1EFED;
 
 .page-body {
     margin-top: 7vh;
+    z-index:1;
 }
 
 .loaded-container {
@@ -136,6 +138,7 @@ background-color: #F1EFED;
     background-image: url("../images/bg/pop.png");
     background-position: center center;
     background-size: cover;
+    padding: 0 !important;
 }
 
 /* 3.1 Hero Text */ 
@@ -291,7 +294,6 @@ background-color: #F1EFED;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #212429;
-    padding: none !important;
 }
 
 
