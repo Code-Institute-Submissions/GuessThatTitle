@@ -12,7 +12,7 @@
 6. Display Question
 6.1 Timer Styling 
 7. Splash Screen (Game Over/Round Complete)
-
+8. How to play page
 */
 
 /* Import google gont */
@@ -321,4 +321,13 @@ background-color: #F1EFED;
 .message-to-player {
     color: #212429;
     margin-top: 0px;
+}
+
+/* 8. How to play page */
+.rules-list {
+    list-style: none;
+}
+
+.rules-list li {
+    padding: 5px;
 }

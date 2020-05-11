@@ -72,7 +72,7 @@
 
   <body>
     <div class="images-to-load d-none">
-      <img src="assets/images/bg/pop.png" alt="background"/>
+      <img src="assets/images/bg/pop.png" alt="background" />
     </div>
 
     <div class="loading">
@@ -236,7 +236,11 @@
 
         <!--Loading-->
         <div class="loading displayvar complete-center d-none">
-          <img class="loading-img" src="assets/images/loading/loading.gif" alt="loading"/>
+          <img
+            class="loading-img"
+            src="assets/images/loading/loading.gif"
+            alt="loading"
+          />
         </div>
 
         <div class="container splashscreen displayvar text-center d-none">
@@ -244,18 +248,52 @@
         </div>
       </div>
 
+      <div class="contain-how-to pt-5 text-center displayvar d-none">
+        <h3>How to Play</h3>
+        <p>
+          <span style="color: #e63946;">G</span>uss
+          <span style="color: #e63946;">T</span>hat
+          <span style="color: #e63946;">T</span>itle is all about, you guessed
+          it, GUESSING! Each round, you'll get four movie titles containing a
+          word of your choice! Your challenge is to guess the missing word..Simple!
+        </p>
+        <h4>Rules</h4>
+        <ul class="rules-list p-2">
+        <li><i class="fas fa-heart"></i> You start with 3 lives</li>
+        <li><i class="fas fa-clock"></i>  Run out of time - lose a life!</li>
+        <li><i class="fas fa-question-circle"></i> Skip a question - lose a life!</li>
+        <li><i class="fas fa-sad-tear"></i> Run out of lives - GAME OVER!</li>
+        </ul>
+        <h4 class="p-2">Sounds easy right?</h4>
+         <button class="btn play-now-btn" data-role="none" data-ajax="false">
+              Play Now</button
+            >
+    <div class="row socials-row">
+          <div class="col-12 text-center">
+            <h6>Follow us</h6>
+            <ul class="socials-list">
+              <li><i class="fab fa-facebook-square"></i></li>
+              <li><i class="fab fa-instagram-square"></i></li>
+              <li><i class="fab fa-twitter-square"></i></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
       <!--Menu Popup-->
-      <div class="contain-menu text-center pt-5" style="display: none;">
+      <div class="contain-menu text-center" style="display: none;">
         <!--Basic List-->
-        <ul class="list-style-remove menu-list menu1">
+        <ul class="list-style-remove menu-list menu1 pt-4">
           <li class="go-home">Home</li>
           <li class="play-game">Play Game</li>
           <li class="how-to">How to Play</li>
           <li>About</li>
           <li>Contact Us</li>
         </ul>
-        <ul class="list-style-remove menu-list menu2 d-none">
-          <li class="end-game">Quit</li>
+        <ul class="list-style-remove menu-list menu2 d-none pt-4">
+          <li class="end-game">Quit Game</li>
+          <li class="start-again">Restart</li>
         </ul>
       </div>
     </div>

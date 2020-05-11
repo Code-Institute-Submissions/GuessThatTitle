@@ -454,6 +454,11 @@ $(".end-game").click(function () {
   quit();
 });
 
+$(".start-again").click(function(){
+$(".contain-menu").toggle("slidedown");
+startGame();
+});
+
 // Quit the game
 function quit() {
   setVars();
