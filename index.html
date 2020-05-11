@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Ultimate Movie Quiz</title>
+    <!--Loader-->
+   
 	<!-- Font Awesome CDN -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
 		integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -34,9 +36,19 @@
 
 
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+     <script src="assets/js/siteloader.js"></script>
 </head>
 
 <body>
+
+
+    <div class="images-to-load d-none">
+		<img src="assets/images/bg/pop.png"/>
+        </div>
+
+    <div class="loading">
+    <img class="complete-center" src="assets/images/loading/loading.gif" alt="loading">
+    </div>
 	<!--Mobile Nav-->
 	<div class="d-sm-none">
 
@@ -54,10 +66,12 @@
 
 	</div>
 
+
+    <div class="container-fluid loaded-container d-none">
 	<!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
 
 	<div class="page-body text-center displayvar">
-    <div class="row">
+    <div class="row ">
     <div class="col-12 hero-text-container text-center">
     <h2 class="hero-heading"><span style="color: #e63946">G</span>UESS <span style="color: #e63946">T</span>HAT <span style="color: #e63946">T</span>ITLE!</h2>
     <i class="fas fa-film hero-film-logo"></i>
@@ -65,7 +79,7 @@
     <h2 class="uppercase hero-text-lower">Movies?</h2>
     </div>
     </div>
-		<div class="row">
+		<div class="row  no-gutters">
 			<div class="col-12 text-center">
 				<br/>
 				<button class="btn play-now-btn" data-role="none" data-ajax="false">Play Now</button><br/>
@@ -177,6 +191,7 @@
 			</ul>
 
 		</div>
+        </div>
 
         <!--Load Scripts-->
 		<script src="assets/js/navigation.js"></script>

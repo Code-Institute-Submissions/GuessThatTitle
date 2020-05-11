@@ -323,6 +323,7 @@ function checkAnswer () {
     if(check.toString().toLowerCase() == stripAns.toString().toLowerCase()) {
        $("#input-answer").css("color", "green"); 
        $("#correct").fadeIn(500).toggleClass("d-none");
+       clearInterval(timer);
        setTimeout(nextQuestion, 2000);
     }
     else {
@@ -482,7 +483,6 @@ $(".page-body").removeClass("d-none");
 // Called when they are out of lives (by skipping questions or running out of time)
 function gameOver() {
 $(".displayvar").addClass("d-none");
-document.getElementById("icon-display").innerHTML = `<i class="fas fa-sad-tear style-face complete-center"></i>`;
 $(".message-to-player").text("Game Over :( ");
 $(".splashscreen").removeClass("d-none");
 setVars();
