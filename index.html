@@ -1,218 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ultimate Movie Quiz</title>
-    <!--Loader-->
 
-    <!-- Font Awesome CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- Link to style.css -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.js"
-      integrity="sha256-iqD4S1Mx78w8tyx9UEwrxuvYYdoAPXLDPfmc5lDUUx0="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"
-      integrity="sha256-E3NHJIUaclYHEQ6uRnkvD72rAmbJYVJ92sCOU/0Rd7s="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.structure.min.css"
-      integrity="sha256-4dlHdgeDJcWLTNUO7bihDo23hg1dNTYYk0sRcFf424w="
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"
-      integrity="sha256-/ykJw/wDxMa0AQhHDYfuMEwVb4JHMx9h4jD4XvHqVzU="
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!--Test jquery UI-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
-      integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik="
-      crossorigin="anonymous"
-    />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Ultimate Movie Quiz</title>
+	<!--Loader-->
 
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    <script src="assets/js/siteloader.js"></script>
-  </head>
+	<!-- Font Awesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+		integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!-- Link to style.css -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.js"
+		integrity="sha256-iqD4S1Mx78w8tyx9UEwrxuvYYdoAPXLDPfmc5lDUUx0=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"
+		integrity="sha256-E3NHJIUaclYHEQ6uRnkvD72rAmbJYVJ92sCOU/0Rd7s=" crossorigin="anonymous"></script>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.structure.min.css"
+		integrity="sha256-4dlHdgeDJcWLTNUO7bihDo23hg1dNTYYk0sRcFf424w=" crossorigin="anonymous" />
+	<script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"
+		integrity="sha256-/ykJw/wDxMa0AQhHDYfuMEwVb4JHMx9h4jD4XvHqVzU=" crossorigin="anonymous" />
+	<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<!--Test jquery UI-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+		integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+		integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous" />
 
-  <body>
-    <div class="images-to-load d-none">
-      <img src="assets/images/bg/pop.png" alt="background" />
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+	<script src="assets/js/siteloader.js"></script>
+</head>
+
+<body>
+	<div class="images-to-load d-none">
+		<img src="assets/images/bg/pop.png" alt="background" />
     </div>
 
-    <div class="loading">
-      <img
+		<div class="loading">
+			<img
         class="complete-center"
         src="assets/images/loading/loading.gif"
         alt="loading"
       />
     </div>
 
-    <!--Mobile Nav-->
-    <div class="d-sm-none">
-      <!--NavBar-->
-      <div class="container-fluid nav-bar">
-        <div class="row">
-          <div class="col-12 text-center menu-col">
-            <i class="fas fa-bars menu-button d-inline-block"></i>
-            <!--Volume controls-->
-            <i class="fas fa-volume-up d-inline-block audio-icon"></i>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="container-fluid loaded-container d-none">
-      <!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
-      <div class="page-body text-center displayvar">
-        <div class="row">
-          <div class="col-12 hero-text-container text-center">
-            <h2 class="hero-heading">
-              <span style="color: #e63946;">G</span>UESS
-              <span style="color: #e63946;">T</span>HAT
-              <span style="color: #e63946;">T</span>ITLE!
-            </h2>
-            <i class="fas fa-film hero-film-logo"></i>
-            <h4 class="uppercase hero-text-upper">Think you know your</h4>
-            <br />
-            <h2 class="uppercase hero-text-lower">
-              <span style="color: #000;">Movies?</span>
-            </h2>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-12 text-center">
-            <br />
-            <button class="btn play-now-btn" data-role="none" data-ajax="false">
-              Play Now</button
-            ><br />
-            <button
+			<!--NavBar-->
+			<div class="container-fluid nav-bar">
+				<div class="row">
+					<div class="col-12 text-center menu-col">
+						<i class="fas fa-bars menu-button d-inline-block"></i>
+						<!--Volume controls-->
+						<i class="fas fa-volume-up d-inline-block audio-icon"></i>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="container-fluid loaded-container d-none p-0">
+				<!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
+				<div class="page-body text-center displayvar">
+					<div class="row">
+						<div class="col-12 hero-text-container text-center">
+							<h2 class="hero-heading">
+								<span style="color: #e63946;">G</span>UESS
+								<span style="color: #e63946;">T</span>HAT
+								<span style="color: #e63946;">T</span>ITLE!
+							</h2>
+							<i class="fas fa-film hero-film-logo"></i>
+							<h4 class="uppercase hero-text-upper">Think you know your</h4>
+							<br />
+							<h2 class="uppercase hero-text-lower">
+								<span style="color: #000;">Movies?</span>
+							</h2>
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-12 text-center">
+							<br />
+							<button class="btn play-now-btn" data-role="none" data-ajax="false">
+              Play Now</button><br />
+							<button
               class="btn how-to-btn mt-3"
               data-role="none"
               data-ajax="false"
             >
               How to play
             </button>
-          </div>
-        </div>
-        <!--Socials-->
-        <div class="row socials-row">
-          <div class="col-12 text-center">
-            <h6>Follow us</h6>
-            <ul class="socials-list">
-              <li><i class="fab fa-facebook-square"></i></li>
-              <li><i class="fab fa-instagram-square"></i></li>
-              <li><i class="fab fa-twitter-square"></i></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+						</div>
+					</div>
+					<!--Socials-->
+					<div class="row socials-row">
+						<div class="col-12 text-center">
+							<h6>Follow us</h6>
+							<ul class="socials-list">
+								<li><i class="fab fa-facebook-square"></i></li>
+								<li><i class="fab fa-instagram-square"></i></li>
+								<li><i class="fab fa-twitter-square"></i></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-      <div class="game-container">
-        <!--Pick Topic at start of round-->
-        <div class="select-topic displayvar pt-5 d-none">
-          <div class="container text-center">
-            <div class="row">
-              <div class="col-12">
-                <h2 class="round-number-text">
-                  Round <span id="round-number"></span>
-                </h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <h5 class="choose-topic-text">Choose a topic</h5>
-              </div>
-            </div>
-            <div class="row pt-5 m-auto">
-              <div class="col-12 m-auto">
-                <ul class="list-style-remove">
-                  <li>
-                    <button
+				<div class="game-container">
+					<!--Pick Topic at start of round-->
+					<div class="select-topic displayvar pt-5 d-none">
+						<div class="container text-center">
+							<div class="row">
+								<div class="col-12">
+									<h2 class="round-number-text">
+										Round <span id="round-number"></span>
+									</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<h5 class="choose-topic-text">Choose a topic</h5>
+								</div>
+							</div>
+							<div class="row pt-5 m-auto">
+								<div class="col-12 m-auto">
+									<ul class="list-style-remove">
+										<li>
+											<button
                       class="btn choose-topic-btn m-3"
                       data-role="none"
                       data-ajax="false"
                       id="topic1"
                     ></button>
-                  </li>
-                  <li>
-                    <button
+										</li>
+										<li>
+											<button
                       class="btn choose-topic-btn m-3"
                       data-role="none"
                       data-ajax="false"
                       id="topic2"
                     ></button>
-                  </li>
-                  <li>
-                    <button
+										</li>
+										<li>
+											<button
                       class="btn choose-topic-btn m-3"
                       data-role="none"
                       data-ajax="false"
                       id="topic3"
                     ></button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
 
-        <!--Show questions-->
-        <div class="display-question displayvar d-none">
-          <div class="row">
-            <div class="col-12 contain-game-headings text-center">
-              <p class="display-timer"><span class="timer"></span>s</p>
-              <h6 class="question-number-container">
-                <span id="question_number"></span> / 4
-              </h6>
-              <p class="display-lives">
-                <span id="lives"></span><i class="fas fa-heart lives-icon"></i>
-              </p>
-            </div>
-          </div>
+					<!--Show questions-->
+					<div class="display-question displayvar d-none">
+						<div class="row">
+							<div class="col-12 contain-game-headings text-center">
+								<p class="display-timer"><span class="timer"></span>s</p>
+								<h6 class="question-number-container">
+									<span id="question_number"></span> / 4
+								</h6>
+								<p class="display-lives">
+									<span id="lives"></span><i class="fas fa-heart lives-icon"></i>
+								</p>
+							</div>
+						</div>
 
-          <div class="container">
-            <div class="row">
-              <div class="col-12 display-title text-center"></div>
-            </div>
-            <div class="row">
-              <div class="col-12 type-answer text-center">
-                <textarea
+						<div class="container">
+							<div class="row">
+								<div class="col-12 display-title text-center"></div>
+							</div>
+							<div class="row">
+								<div class="col-12 type-answer text-center">
+									<textarea
                   id="input-answer"
                   class="text-center"
                   data-role="none"
@@ -220,153 +186,149 @@
                   placeholder="Type Answer Here"
                   oninput="checkAnswer()"
                 ></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 type-answer">
-                <button class="skip-question-btn">Skip Question</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 text-center pt-5">
-                <h3 id="correct" class="d-none">Correct!</h3>
-              </div>
-            </div>
-          </div>
-        </div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 type-answer">
+									<button class="skip-question-btn">Skip Question</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 text-center pt-5">
+									<h3 id="correct" class="d-none">Correct!</h3>
+								</div>
+							</div>
+						</div>
+					</div>
 
-        <!--Loading-->
-        <div class="loading displayvar complete-center d-none">
-          <img
-            class="loading-img"
-            src="assets/images/loading/loading.gif"
-            alt="loading"
-          />
-        </div>
+					<div class="container splashscreen displayvar text-center d-none">
+						<h2 class="message-to-player complete-center"></h2>
+					</div>
+				</div>
 
-        <div class="container splashscreen displayvar text-center d-none">
-          <h2 class="message-to-player complete-center"></h2>
-        </div>
-      </div>
-
-      <div class="contain-how-to pt-2 displayvar d-none">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 game-step">
-              <div class="number-box"><h5 class="complete-center">1</h5></div>
-              <!--Title list-->
-              <ul class="list-style-remove ml-5 step-list-style">
-                <li>PICK</li>
-                <li>A</li>
-                <li>WORD</li>
-              </ul>
-              <!--Choose word list-->
-              <ul class="list-style-remove choose-word-list">
-                <li>
-                  <div class="choose-word-example">
-                    <p class="complete-center">House</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="choose-word-example">
-                    <p class="complete-center">Year</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="choose-word-example">
-                    <p class="complete-center">School</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="col-12 game-step">
-              <div class="number-box"><h5 class="complete-center">2</h5></div>
-              <ul class="list-style-remove ml-5 step-list-style">
-                <li>GUESS</li>
-                <li>THE</li>
-                <li>TITLE</li>
-              </ul>
-              <!--Choose word list-->
-              <div class="contain-title-example">
-                <ul class="list-style-remove text-center mt-3">
-                  <li>
-                    <h6>SCHOOL OF</h6>
-                  </li>
-                  <li>
-                    <h5>R _ _ _</h5>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center pt-3">
-              <h3 class="features-heading">FEATURES</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3 contain-feature text-center">
-              <div class="contain-feature-icon complete-center">
-                <i class="fas fa-heart feature-icon complete-center"></i>
-              </div>
-            </div>
-            <div class="col-3 contain-feature text-center">
-              <div class="contain-feature-icon-2 complete-center">
-                <i
+				<div class="contain-how-to pt-2 displayvar d-none">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 game-step">
+								<div class="number-box">
+									<h5 class="complete-center">1</h5>
+								</div>
+								<!--Title list-->
+								<ul class="list-style-remove ml-5 step-list-style">
+									<li>PICK</li>
+									<li>A</li>
+									<li>WORD</li>
+								</ul>
+								<!--Choose word list-->
+								<ul class="list-style-remove choose-word-list">
+									<li>
+										<div class="choose-word-example">
+											<p class="complete-center">House</p>
+										</div>
+									</li>
+									<li>
+										<div class="choose-word-example">
+											<p class="complete-center">Year</p>
+										</div>
+									</li>
+									<li>
+										<div class="choose-word-example">
+											<p class="complete-center">School</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="col-12 game-step">
+								<div class="number-box">
+									<h5 class="complete-center">2</h5>
+								</div>
+								<ul class="list-style-remove ml-5 step-list-style">
+									<li>GUESS</li>
+									<li>THE</li>
+									<li>TITLE</li>
+								</ul>
+								<!--Choose word list-->
+								<div class="contain-title-example">
+									<ul class="list-style-remove text-center mt-3">
+										<li>
+											<h6>SCHOOL OF</h6>
+										</li>
+										<li>
+											<h5>R _ _ _</h5>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-12 text-center pt-3">
+								<h3 class="features-heading">FEATURES</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3 contain-feature text-center">
+								<div class="contain-feature-icon complete-center">
+									<i class="fas fa-heart feature-icon complete-center"></i>
+								</div>
+							</div>
+							<div class="col-3 contain-feature text-center">
+								<div class="contain-feature-icon-2 complete-center">
+									<i
                   class="fas fa-hourglass-end feature-icon complete-center"
                 ></i>
-              </div>
-            </div>
-            <div class="col-3 contain-feature text-center">
-              <div class="contain-feature-icon complete-center">
-                <i class="fas fa-forward feature-icon complete-center"></i>
-              </div>
-            </div>
-            <div class="col-3 contain-feature text-center">
-              <div class="contain-feature-icon-2 complete-center">
-                <i class="fas fa-plus-square feature-icon complete-center"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+								</div>
+							</div>
+							<div class="col-3 contain-feature text-center">
+								<div class="contain-feature-icon complete-center">
+									<i class="fas fa-forward feature-icon complete-center"></i>
+								</div>
+							</div>
+							<div class="col-3 contain-feature text-center">
+								<div class="contain-feature-icon-2 complete-center">
+									<i class="fas fa-plus-square feature-icon complete-center"></i>
+								</div>
+							</div>
+						</div>
+					</div>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center pt-4">
-              <h4>Sounds easy right?</h4>
-              <button
+					<div class="container">
+						<div class="row">
+							<div class="col-12 text-center pt-4">
+								<h4>Sounds easy right?</h4>
+								<button
                 class="btn play-now-btn"
                 data-role="none"
                 data-ajax="false"
               >
                 Play Now
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <!--Menu Popup-->
-      <div class="contain-menu text-center" style="display: none;">
-        <!--Basic List-->
-        <ul class="list-style-remove menu-list menu1 pt-4">
-          <li class="go-home">Home</li>
-          <li class="play-game">Play Game</li>
-          <li class="how-to">How to Play</li>
-          <li>About</li>
-          <li>Contact Us</li>
-        </ul>
-        <ul class="list-style-remove menu-list menu2 d-none pt-4">
-          <li class="end-game">Quit Game</li>
-          <li class="start-again">Restart</li>
-        </ul>
-      </div>
-    </div>
+				<!--Menu Popup-->
+				<div class="contain-menu text-center" style="display: none;">
+					<!--Basic List-->
+					<ul class="list-style-remove menu-list menu1 pt-4">
+						<li class="go-home">Home</li>
+						<li class="play-game">Play Game</li>
+						<li class="how-to">How to Play</li>
+						<li>About</li>
+						<li>Contact Us</li>
+					</ul>
+					<ul class="list-style-remove menu-list menu2 d-none pt-4">
+						<li class="end-game">Quit Game</li>
+						<li class="start-again">Restart</li>
+					</ul>
+				</div>
+			</div>
 
-    <!--Load Scripts-->
-    <script src="assets/js/navigation.js"></script>
-    <script src="assets/js/engine.js"></script>
-  </body>
+			<!--Load Scripts-->
+			<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/engine.js"></script>
+</body>
+
 </html>

@@ -32,6 +32,11 @@ var wrongAnsAudio = new Audio("/assets/audio/wrong.mp3");
 wrongAnsAudio.loop = false; //  Dont Loop
 wrongAnsAudio.volume = 0.3;
 
+var timerAudio = new Audio("/assets/audio/beep.mp3");
+timerAudio.loop = false;
+timerAudio.volume = 0.5;
+
+
 $(".play-now-btn").click(function () {
   $(".displayvar").addClass("d-none");
   $(".message-to-player").text("GOOD LUCK!");
@@ -336,16 +341,23 @@ function startTimer() {
   function countDown() {
     if (timerVal != 0) {
       if (timerVal <= 10) {
+        timerAudio.play();
         $(".timer").css("color", "red");
       }
       timerVal--;
       $(".timer").hide().fadeIn("1000").text(timerVal);
     } else {
+      // Show the correct answer here
       clearInterval(timer);
-      $(".timer").css("color", "grey"); // Reset color
       loseLife();
       document.getElementById("lives").innerHTML = numberOfLives;
+      $("#input-answer").val(answer);
+      setTimeout(doNext, 4000);
+
+      function doNext() {
+      $(".timer").css("color", "grey"); // Reset color
       nextQuestion();
+      }
     }
   }
 }
@@ -441,11 +453,13 @@ $(".audio-icon").click(function () {
     $(this).removeClass("fa-volume-up").addClass("fa-volume-mute");
     correctAnsAudio.volume = 0;
     wrongAnsAudio.volime = 0;
+    timerAudio.volume = 0;
     console.log("Sound Muted");
   } else if (correctAnsAudio.volume == 0) {
     $(this).removeClass("fa-volume-mute").addClass("fa-volume-up");
     correctAnsAudio.volume = 0.5;
     wrongAnsAudio.volime = 0.3;
+    timerAudio.volume = 0.5;
     console.log("Sound On");
   }
 });

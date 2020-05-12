@@ -125,11 +125,7 @@ background-color: #F1EFED;
     z-index:1;
 }
 
-.loaded-container {
-    position: fixed;
-    top: 0;
-    padding: 0 !important;
-}
+
 
 /* 3.1 Hero Text */ 
 
@@ -408,3 +404,16 @@ height: 80px;
     font-size: 30px;
 }
 
+
+
+
+
+/* media queries */ 
+
+@media (min-width: 576px) { 
+
+.contain-menu {
+    width: 20vw;
+}
+
+ }
