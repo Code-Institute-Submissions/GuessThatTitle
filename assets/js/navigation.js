@@ -11,7 +11,11 @@ $(".go-home").click(function () {
 });
 
 $(".play-game").click(function () {
-  console.log("Start the game");
+$(".displayvar").addClass("d-none");
+$(".contain-menu").toggle("slidedown");
+$(".message-to-player").text("GOOD LUCK!");
+$(".splashscreen").hide().fadeIn(500).removeClass("d-none");
+setTimeout(startGame, 3000);
 });
 
 $(".learn-more").click(function () {
