@@ -110,7 +110,9 @@
 .go-home, 
 .play-game,
 .learn-more,
-.how-to {
+.how-to,
+.end-game,
+.start-again {
     cursor: pointer;
 }
 
@@ -301,6 +303,73 @@
 
 /* 8. How to play page */
 
+.theme-example-list {
+    list-style: none;
+}
+
+
+.theme-example-list li{
+    display: inline-block;
+}
+
+.number-box {
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: #e63946;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+
+.number-box-2 {
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: #054a91;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+
+.contain-theme {
+    position: relative;
+    height: 50px;
+    width: 80px;
+    background-color: #054a91;  
+    border-radius: 3px;
+    color: white;
+}
+
+
+.title-example-container {
+    height: 200px;
+    width: 240px;
+    background-color: #e63946;
+    border-radius: 3px;
+    color: white;
+    font-size: 24px;
+    position: relative;
+}
+
+.type-answer-2 {
+   margin: 0;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    width: 180px;
+    height: 30px;
+    background-color: #F9C80E;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.exmaple-title-text {
+    margin-top: -20px;
+}
+
 .features-heading {
   color: #212429;
 }
@@ -344,7 +413,13 @@
   font-size: 10px;
   padding: 5px;
 }
+.about-title {
+    color: #e63946;
+}
 
+.about-title-2 {
+    color: #054a91;
+}
 
 .info-list-style {
   position: absolute;

@@ -7,7 +7,7 @@ var pageNumber;
 
 var numberOfLives; // Store lives
 var numberOfPasses; // Store number of passes left
-var currentQuestionNumber; // Store what question they are on out of 10
+var currentQuestionNumber; // Store what question they are on out of
 var questionNumber = 1; // Track what question they are on (out of 10)
 var topic;
 var tempQuestion = []; // Store question data temp before pushing array into quesiton array
@@ -35,7 +35,6 @@ wrongAnsAudio.volume = 0.3;
 var timerAudio = new Audio("/assets/audio/beep.mp3");
 timerAudio.loop = false;
 timerAudio.volume = 0.5;
-
 
 $(".play-now-btn").click(function () {
   $(".displayvar").addClass("d-none");
@@ -250,8 +249,13 @@ function showQuestion() {
       }
     }
 
-    var string = answer[0] + replacement.join();
-    string.replace(/,/g, "");
+    // If the answer is only one letter - we don't give them a clue - if not, we give them the first letter
+    if (answer.length === 1) {
+      var string = replacement.join();
+    } else {
+      var string = answer[0] + replacement.join();
+      string.replace(/,/g, "");
+    }
 
     if (
       titlewords[wordPosition].toString().toLowerCase() !=
@@ -288,7 +292,10 @@ function showQuestion() {
   var displayQ2 = displayQ.replace(/,/g, " ");
 
   document.getElementById("question_number").innerHTML = questionNumber;
-  document.getElementById("lives").innerHTML = numberOfLives;
+  // Dont change to -1 if lives are at 0
+  if (numberOfLives > 0) {
+    document.getElementById("lives").innerHTML = numberOfLives;
+  }
   $(".display-title").text(displayQ2);
   $(".display-question").removeClass("d-none");
   $(".loading").addClass("d-none");
@@ -303,15 +310,20 @@ function showQuestion() {
 }
 
 function checkAnswer() {
+  // Allow the user to either type the full word or the rest of the word minus the given letter
   if (answer.length == 1) {
     var check = $("#input-answer").val();
   } else {
     var check = answer[0] + $("#input-answer").val();
+    var check2 = $("#input-answer").val();
   }
 
   // need to strip answer of special strings (, : ? etc)
   var stripAns = answer.replace(/[#?!,:]/g, "");
-  if (check.toString().toLowerCase() == stripAns.toString().toLowerCase()) {
+  if (
+    check.toString().toLowerCase() == stripAns.toString().toLowerCase() ||
+    check2.toString().toLowerCase() == stripAns.toString().toLowerCase()
+  ) {
     $("#input-answer").css("color", "green");
     correctAnsAudio.play();
     $("#correct").fadeIn(500).toggleClass("d-none");
@@ -355,8 +367,8 @@ function startTimer() {
       setTimeout(doNext, 4000);
 
       function doNext() {
-      $(".timer").css("color", "grey"); // Reset color
-      nextQuestion();
+        $(".timer").css("color", "grey"); // Reset color
+        nextQuestion();
       }
     }
   }
@@ -418,8 +430,10 @@ function nextRound() {
 
 // Round completed
 function roundComplete() {
-  numberOfLives++; // Add a life if they complete the round 
-  document.getElementById("message-icon").innerHTML = `+1</h5><i class="fas fa-heart message-icon-style-2 d-inline"></i>`;
+  numberOfLives++; // Add a life if they complete the round
+  document.getElementById(
+    "message-icon"
+  ).innerHTML = `+1</h5><i class="fas fa-heart message-icon-style-2 d-inline"></i>`;
   // Display round complete message
   $(".displayvar").addClass("d-none"); // Hide everything
   $(".message-to-player").text("Round Complete!");
@@ -470,9 +484,9 @@ $(".end-game").click(function () {
   quit();
 });
 
-$(".start-again").click(function(){
-$(".contain-menu").toggle("slidedown");
-startGame();
+$(".start-again").click(function () {
+  $(".contain-menu").toggle("slidedown");
+  startGame();
 });
 
 // Quit the game
