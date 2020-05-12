@@ -418,6 +418,8 @@ function nextRound() {
 
 // Round completed
 function roundComplete() {
+  numberOfLives++; // Add a life if they complete the round 
+  document.getElementById("message-icon").innerHTML = `+1</h5><i class="fas fa-heart message-icon-style-2 d-inline"></i>`;
   // Display round complete message
   $(".displayvar").addClass("d-none"); // Hide everything
   $(".message-to-player").text("Round Complete!");
@@ -486,6 +488,7 @@ function quit() {
 // Called when they are out of lives (by skipping questions or running out of time)
 function gameOver() {
   $(".displayvar").addClass("d-none");
+  $("#message-icon").text(" "); // Get rid of lives icon
   $(".message-to-player").text("Game Over :( ");
   $(".splashscreen").removeClass("d-none");
   setVars();

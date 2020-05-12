@@ -13,407 +13,430 @@
 6.1 Timer Styling 
 7. Splash Screen (Game Over/Round Complete)
 8. How to play page
+9. About Page
 */
 
 /* Import google gont */
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap");
 
 /* 1. Generic Styling */
 
 * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Rubik', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
 }
 
 .list-style-remove {
-    list-style: none;
+  list-style: none;
 }
 
 .list-style-remove li {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 body {
-background-color: #F1EFED;
+  background-color: #f1efed;
 }
-
-
 
 .complete-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-
-
-
-/* 1.1 Loading Gif */ 
+/* 1.1 Loading Gif */
 .loading {
-    height: 100vh;
+  height: 100vh;
 }
-
 
 .loading-img {
-    height: 60px;
-    width: 60px;
+  height: 60px;
+  width: 60px;
 }
 
 /* 2. Nar-Bar */
 
 .nav-bar {
-    position: fixed;
-    top: 0;
-    height: 7vh;
-    background-color:#EAE8E5;
-    z-index: 2;
-  
+  position: fixed;
+  top: 0;
+  height: 7vh;
+  background-color: #eae8e5;
+  z-index: 2;
 }
 
 .menu-col {
-    height: 7vh;
+  height: 7vh;
 }
 
 .menu-button {
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    left: 5%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 5%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
 }
 
 .audio-icon {
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    right: 1%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  right: 1%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
 }
 
 .contain-menu {
-    position: fixed;
-    top: 7vh;
-    height: 93vh;
-    background-color: #EAE8E5;
-    width: 100%;
-    color: #000;
+  position: fixed;
+  top: 7vh;
+  height: 93vh;
+  background-color: #eae8e5;
+  width: 100%;
+  color: #000;
 }
 
 .menu-list li {
-    padding: 10px;
+  padding: 10px;
 }
 
-
-/* 3. Home Page Generals */ 
+/* 3. Home Page Generals */
 
 .page-body {
-    margin-top: 7vh;
-    z-index:1;
+  margin-top: 7vh;
+  z-index: 1;
 }
 
-
-
-/* 3.1 Hero Text */ 
+/* 3.1 Hero Text */
 
 .hero-heading {
-    line-height: 0;
-    padding: 10px;
-    font-size: 28px;
-    color: black;
+  line-height: 0;
+  padding: 10px;
+  font-size: 28px;
+  color: black;
 }
 
 .hero-film-logo {
-    font-size: 80px;
-    padding: 10px;
-    color: #E63946;
+  font-size: 80px;
+  padding: 10px;
+  color: #e63946;
 }
 
 .hero-text-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .hero-text-upper {
-    color: #000;
+  color: #000;
 }
 
-
 .hero-text-lower {
-   line-height: 0; 
-   font-size:60px;
-   letter-spacing: 2px;
+  line-height: 0;
+  font-size: 60px;
+  letter-spacing: 2px;
 }
 
 /* 3.2 Butotns */
 
-
 .play-now-btn {
-    background-color:  #E63946;
-    color: #F1EFED;
-    width: 150px;
-    height: 50px;
-    padding: 5px;
-    
+  background-color: #e63946;
+  color: #f1efed;
+  width: 150px;
+  height: 50px;
+  padding: 5px;
 }
 
 .how-to-btn {
-     background-color: #054A91;
-    color: #F1EFED;
-    width: 150px;
-    padding: 5px;
-        height: 50px;
-}    
-
+  background-color: #054a91;
+  color: #f1efed;
+  width: 150px;
+  padding: 5px;
+  height: 50px;
+}
 
 /* 3.3 Socials List */
 
-
 .socials-row {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .socials-row h6 {
-    margin: 0;
+  margin: 0;
 }
 .socials-list {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
-.socials-list li{
-    display: inline-block;
-    font-size: 24px;
+.socials-list li {
+  display: inline-block;
+  font-size: 24px;
 }
 
-
-
-
-/* 4. Game Generals */ 
+/* 4. Game Generals */
 
 .game-container {
-    margin-top: 7vh;
+  margin-top: 7vh;
 }
-
 
 /* 5. Choose Topic */
 
 .choose-topic-btn {
-    height: 50px;
-    width: 200px;
-    color: white;
-    background-color: #e63946;
-    border: none;
-
+  height: 50px;
+  width: 200px;
+  color: white;
+  background-color: #e63946;
+  border: none;
 }
 
 .round-number-text {
-    font-size: 40px;
+  font-size: 40px;
 }
 .choose-topic-text {
-    color: #e63946;
-    font-size: 16px;
+  color: #e63946;
+  font-size: 16px;
 }
 
-/* 6. Display Question */ 
-
-
+/* 6. Display Question */
 
 .question-number-title {
-    font-size: 18px;
-
+  font-size: 18px;
 }
 
 .display-title {
-    color: black;
-    font-size: 20px;
+  color: black;
+  font-size: 20px;
 }
 
 .skip-question-btn {
-    height: 40px;
-    width: 300px;
-    background-color: #212429;
-    color: white;
+  height: 40px;
+  width: 300px;
+  background-color: #212429;
+  color: white;
 }
 
 .contain-game-headings {
-    position: relative;
+  position: relative;
 }
 
-
 .question-number-container {
-    position: absolute;
-    top: 0;
-    left: 35px;
+  position: absolute;
+  top: 0;
+  left: 35px;
 }
 
 .display-lives {
-     position: absolute;
-    top: 0;
-    right: 20px;
+  position: absolute;
+  top: 0;
+  right: 20px;
 }
 
 .lives-icon {
-    color: #e63946;
+  color: #e63946;
 }
 
 #input-answer {
-    outline: none;
-    height: 50px;
-    width: 280px;
-    line-height: 50px;
-    font-size: 24px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #212429;
+  outline: none;
+  height: 50px;
+  width: 280px;
+  line-height: 50px;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #212429;
 }
 
-
-/* 6.1 Timer Styling */ 
+/* 6.1 Timer Styling */
 
 .display-timer {
-    color: grey;
-    opacity: 0.7;
-    font-size: 35px;
+  color: grey;
+  opacity: 0.7;
+  font-size: 35px;
 }
 
 /* 7. Splash Screen */
 
 .splashscreen {
-    height: 93vh;
-    position: relative;
+  height: 93vh;
+  position: relative;
 }
 
 .style-face {
-    font-size: 100px;
-    color: yellow;
-    margin-top: -120px;
+  font-size: 100px;
+  color: yellow;
+  margin-top: -120px;
 }
 
 .message-to-player {
-    color: #212429;
-    margin-top: 0px;
+  color: #212429;
+  margin-top: 0px;
+}
+
+.message-icon-style {
+  padding-top: 300px;
+  font-size: 25px !important;
+}
+
+.message-icon-style-2 {
+  font-size: 25px;
+  color: red;
+  padding-left: 5px;
 }
 
 /* 8. How to play page */
 
 .rules-icon {
-   color: #E63946;
-   font-size: 40px;
+  color: #e63946;
+  font-size: 40px;
 }
 
 .game-step {
-    height: 120px;
-    background-color: #054A91;
-    margin-bottom: 5px;
-    position: relative;
+  height: 120px;
+  background-color: #054a91;
+  margin-bottom: 5px;
+  position: relative;
 }
 
 .number-box {
-    position: relative;
-    height: 40px;
-    width: 40px;
-    border-radius: 4px;
-    background-color: #E63946;
-    color: white;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  background-color: #e63946;
+  color: white;
 }
 
 .step-list-style {
-        position: absolute;
-        top: 10px;
+  position: absolute;
+  top: 10px;
 }
 
-
 .step-list-style li {
-    color: white;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 30px;
-
+  color: white;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 .choose-word-list {
-    position: absolute;
-    top: 5px;
-    right: 2%;
+  position: absolute;
+  top: 5px;
+  right: 2%;
 }
 
 .choose-word-example {
-    height: 30px;
-    width: 100px;
-    background-color: #E63946;
-    color: white;
-    border-radius: 3px;
-    margin: 5px;
-    position: relative;
+  height: 30px;
+  width: 100px;
+  background-color: #e63946;
+  color: white;
+  border-radius: 3px;
+  margin: 5px;
+  position: relative;
 }
 
 .contain-title-example {
-    height: 80px;
-    width: 120px;
-    background-color: #E63946;
-    color: white;
-    border-radius: 3px;
+  height: 80px;
+  width: 120px;
+  background-color: #e63946;
+  color: white;
+  border-radius: 3px;
+  margin: 5px;
+  position: absolute;
+  top: 20px;
+  right: 2%;
 }
 
-.contain-title-example{
-    margin: 5px;
-    position: absolute;
-    top: 20px;
-    right: 2%;
-}
+
 
 .features-heading {
-    color: #212429;
+  color: #212429;
 }
 
 .contain-feature {
-position: relative;
-height: 80px;
+  position: relative;
+  height: 80px;
 }
 
 .contain-feature-icon {
-    height: 50px;
-    width: 50px;
-    border-radius: 2px;
-    background-color: #E63946;
-    color: whitesmoke;
+  height: 50px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: #e63946;
+  color: whitesmoke;
 }
 .contain-feature-icon-2 {
-    height: 50px;
-    width: 50px;
-    border-radius: 2px;
-    background-color: #054A91;
-    color: whitesmoke;
+  height: 50px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: #054a91;
+  color: whitesmoke;
 }
-
 
 .feature-icon {
+  font-size: 30px;
+}
+
+/* 9. About Page */ 
+
+.contain-infotext {
+  height: 100px;
+  width: 180px;
+  background-color: #e63946;
+  color: white;
+  border-radius: 3px;
+  margin: 5px;
+  position: absolute;
+  top: 7px;
+  right: 2%;
+  font-size: 10px;
+  padding: 5px;
+}
+
+
+.info-list-style {
+  position: absolute;
+  top: 10px;
+}
+
+.info-list-style li {
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.email-icon {
     font-size: 30px;
+    padding: 5px;
+}
+
+.email-heading {
+    font-size: 12px;
 }
 
 
 
 
 
-/* media queries */ 
 
-@media (min-width: 576px) { 
+/* media queries */
 
-.contain-menu {
+@media (min-width: 576px) {
+  .contain-menu {
     width: 20vw;
+  }
+
+.loaded-container {
+    max-width: 600px;
 }
 
- }
+}
