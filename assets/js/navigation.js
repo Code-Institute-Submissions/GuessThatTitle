@@ -1,4 +1,4 @@
-$(".menu-button ").click(function () {
+$(".menu-button").click(function () {
   // Display nav (will add slide)
   $(".contain-menu").toggle("slidedown");
 });
@@ -14,9 +14,10 @@ $(".play-game").click(function () {
   console.log("Start the game");
 });
 
-$(".go-about").click(function () {
-  // Hide everything
-  // Unhide about
+$(".learn-more").click(function () {
+$(".displayvar").addClass("d-none");
+  $(".contain-menu").toggle("slidedown");
+  $(".contain-about-us").removeClass("d-none");
 });
 
 $(".how-to").click(function () {
@@ -30,7 +31,4 @@ $(".displayvar").addClass("d-none");
 $(".contain-how-to").removeClass("d-none");
 });
 
-$(".go-contact").click(function () {
-  // Hide everything
-  // Unhide contact
-});
+

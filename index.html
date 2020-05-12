@@ -153,7 +153,7 @@
             </div>
             <div class="row">
               <div class="col-12">
-                <h5 class="choose-topic-text">Choose a topic</h5>
+                <h5 class="choose-topic-text">Choose a theme</h5>
               </div>
             </div>
             <div class="row pt-5 m-auto">
@@ -238,59 +238,21 @@
         </div>
       </div>
 
-      <div class="contain-how-to pt-2 displayvar d-none">
+      <div class="contain-how-to pt-2 displayvar">
         <div class="container">
           <div class="row">
-            <div class="col-12 game-step">
-              <div class="number-box">
-                <h5 class="complete-center">1</h5>
-              </div>
-              <!--Title list-->
-              <ul class="list-style-remove ml-5 step-list-style">
-                <li>PICK</li>
-                <li>A</li>
-                <li>WORD</li>
-              </ul>
-              <!--Choose word list-->
-              <ul class="list-style-remove choose-word-list">
-                <li>
-                  <div class="choose-word-example">
-                    <p class="complete-center">House</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="choose-word-example">
-                    <p class="complete-center">Year</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="choose-word-example">
-                    <p class="complete-center">School</p>
-                  </div>
-                </li>
-              </ul>
+            <div class="col-12">
+            <h4>CHOOSE A THEME</h4>
+            <ul class="theme-example-list">
+            <li>House</li>
+            <li>School</li>
+            <li>Star</li>
+            </ul>
             </div>
-            <div class="col-12 game-step">
-              <div class="number-box">
-                <h5 class="complete-center">2</h5>
-              </div>
-              <ul class="list-style-remove ml-5 step-list-style">
-                <li>GUESS</li>
-                <li>THE</li>
-                <li>TITLE</li>
-              </ul>
-              <!--Choose word list-->
-              <div class="contain-title-example">
-                <ul class="list-style-remove text-center mt-3">
-                  <li>
-                    <h6>SCHOOL OF</h6>
-                  </li>
-                  <li>
-                    <h5>R _ _ _</h5>
-                  </li>
-                </ul>
-              </div>
+            <div class="col-12">
+            <h4>GUESS THE TITLE</h4>
             </div>
+            
           </div>
         </div>
         <div class="container">
@@ -341,65 +303,71 @@
         </div>
       </div>
 
-      <div class="contain-about-us displayvar">
+      <div class="contain-about-us displayvar d-none">
         <div class="container p-0">
-          <div class="col-12 game-step">
-            <ul class="list-style-remove ml-1 step-list-style">
-              <li>WHO</li>
-              <li>ARE</li>
-              <li>WE?</li>
-            </ul>
-            <!--Choose word list-->
-            <div class="contain-infotext">
-              <p>
-                Guess That Title is an online quiz game developed as a project
-                to demontrate progress in learning HTML5, CSS3, and Javascript.
-              </p>
-            </div>
+          <div class="col-12 game-step text-center">
+            <h4 class="about-title">WHO ARE WE?</h4>
+            <p>
+              Guess That Title is an online quiz game developed as a project to
+              demontrate progress in learning HTML5, CSS3, and Javascript.
+            </p>
           </div>
 
-          <div class="col-12 game-step">
-            <ul class="list-style-remove ml-1 info-list-style">
-              <li>BEHIND</li>
-              <li>THE</li>
-              <li>SCENES</li>
-            </ul>
-            <!--Choose word list-->
-            <div class="contain-infotext">
-              <p>
-                The GTT engine runs off Javascript. It draws all information from the OMDb API - a large database on films and tv shows. It also draws resources from JQuery and Bootstrap libraries. 
-              </p>
-            </div>
+          <div class="col-12 game-step text-center">
+            <h4 class="about-title">BEHIND THE SCENES</h4>
+            <p>
+              The GTT engine runs off Javascript. It draws all information from
+              the
+              <a href="http://www.omdbapi.com/" target="_blank">OMDb API</a> - a
+              large database on films and tv shows. It also draws resources from
+              JQuery and Bootstrap libraries.
+            </p>
           </div>
-        <div class="col-12 text-center">
-        <i class="fas fa-envelope-open-text email-icon pt-3"></i>
-        <p class="email-heading">Have a question? Feel free to send us an email!</p>
-        <form>
-        <input class="email-form" type="text" name="name" placeholder="Your Name"/>
-        <input  class="email-form"  type="email" name="email" placeholder="Your Email"/>
-        <textarea  class="email-form" name="message" placeholder="Your Message" max-size="300"></textarea>
-        <input class="send-email-btn" type="submit" value="Send">
-        </form>
-        </div>
+          <div class="col-12 text-center email-form-container">
+            <i class="fas fa-envelope-open-text email-icon pt-3"></i>
+            <p class="email-heading">
+              Have a question? Feel free to send us an email!
+            </p>
+            <form>
+              <input
+                class="email-form"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+              />
+              <input
+                class="email-form"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+              />
+              <textarea
+                class="email-form"
+                name="message"
+                placeholder="Your Message"
+                max-size="300"
+              ></textarea>
+              <input class="send-email-btn" type="submit" value="Send" />
+            </form>
+          </div>
         </div>
       </div>
 
       <!--Menu Popup-->
-      <div class="contain-menu text-center" style="display: none;">
-        <!--Basic List-->
-        <ul class="list-style-remove menu-list menu1 pt-4">
-          <li class="go-home">Home</li>
-          <li class="play-game">Play Game</li>
-          <li class="how-to">How to Play</li>
-          <li>Learn More</li>
-        </ul>
-        <ul class="list-style-remove menu-list menu2 d-none pt-4">
-          <li class="end-game">Quit Game</li>
-          <li class="start-again">Restart</li>
-        </ul>
-      </div>
     </div>
-
+    <div class="contain-menu text-center" style="display: none;">
+      <!--Basic List-->
+      <ul class="list-style-remove menu-list menu1 pt-4">
+        <li class="go-home">Home</li>
+        <li class="play-game">Play Game</li>
+        <li class="how-to">How to Play</li>
+        <li class="learn-more">Learn More</li>
+      </ul>
+      <ul class="list-style-remove menu-list menu2 d-none pt-4">
+        <li class="end-game">Quit Game</li>
+        <li class="start-again">Restart</li>
+      </ul>
+    </div>
     <!--Load Scripts-->
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/engine.js"></script>
