@@ -389,7 +389,7 @@ function nextQuestion() {
   arrayPositionSelect++;
   if (questionNumber < 5 && numberOfLives >= 0) {
     showQuestion(); // Dont need to call generate question (all questions generated)
-  } else if (numberOfLives < 0) {
+  } else if (numberOfLives < 1) {
     gameOver();
   } else if (questionNumber >= 5) {
     roundComplete();
@@ -459,7 +459,9 @@ function loseLife() {
       clearInterval(shakeheart);
     }
   }
+  if (numberOfLives > 0) {
   numberOfLives--;
+  }
 }
 
 // Mute Audio

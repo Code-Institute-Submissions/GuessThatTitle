@@ -36,6 +36,14 @@
 
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<script src="assets/js/siteloader.js"></script>
+	<!--Email JS-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+		(function(){
+      emailjs.init("user_gEVM9YzkDGwlZMiAso29G");
+   })();
+	</script>
 </head>
 
 <body>
@@ -209,7 +217,9 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12 text-center">
-								<h4><div class="number-box mr-2">1</div>CHOOSE A THEME</h4>
+								<h4>
+									<div class="number-box mr-2">1</div>CHOOSE A THEME
+								</h4>
 								<ul class="theme-example-list">
 									<li>
 										<div class="contain-theme">
@@ -217,25 +227,30 @@
 										</div>
 									</li>
 									<li>
-                                    
-                                    <div class="contain-theme">
+
+										<div class="contain-theme">
 											<p class="complete-center">School</p>
 										</div>
-                                    </li>
+									</li>
 									<li>
-                                    <div class="contain-theme">
+										<div class="contain-theme">
 											<p class="complete-center">Star</p>
-										</div></li>
+										</div>
+									</li>
 								</ul>
 							</div>
 							<div class="col-12 text-center">
-								<h4><div class="number-box-2 mr-2">2</div>GUESS THE TITLE</h4>
-                                <div class="title-example-container m-auto">
-                                <p class="complete-center exmaple-title-text">SCHOOL OF<br/>
+								<h4>
+									<div class="number-box-2 mr-2">2</div>GUESS THE TITLE
+								</h4>
+								<div class="title-example-container m-auto">
+									<p class="complete-center exmaple-title-text">SCHOOL OF<br/>
                                 R _ _ _
                                 </p>
-                                <div class="type-answer-2"><p class="complete-center">TYPE ANSWER</p></div>
-                                </div>
+										<div class="type-answer-2">
+											<p class="complete-center">TYPE ANSWER</p>
+										</div>
+								</div>
 							</div>
 
 						</div>
@@ -289,6 +304,12 @@
 				</div>
 
 				<div class="contain-about-us displayvar d-none">
+            
+                  <div class="email-success d-none">
+                    <p class="complete-center">Thanks for your email! We'll get back to you soon.</p>
+                    <i class="fas fa-window-close close-popup"></i>
+                        </div>
+                     
 					<div class="container p-0">
 						<div class="col-12 text-center pt-3">
 							<h4 class="about-title">WHO ARE WE?</h4>
@@ -313,7 +334,7 @@
 							<p class="email-heading">
 								Have a question? Feel free to send us an email!
 							</p>
-							<form>
+							<form onsubmit="return sendMail(this);" id="email_form">
 								<input
                 class="email-form"
                 type="text"
@@ -334,9 +355,12 @@
               ></textarea>
 								<input class="send-email-btn" type="submit" value="Send" />
             </form>
+          
 						</div>
 					</div>
+                        
 				</div>
+           
 
 				<!--Menu Popup-->
 			</div>
@@ -356,6 +380,7 @@
 			<!--Load Scripts-->
 			<script src="assets/js/navigation.js"></script>
 			<script src="assets/js/engine.js"></script>
+            <script src="assets/js/sendemail.js"></script>
 </body>
 
 </html>
