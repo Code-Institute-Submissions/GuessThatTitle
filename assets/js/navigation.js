@@ -34,6 +34,7 @@ $(".contain-how-to").removeClass("d-none");
 // Close email send popup
 $(".close-popup").click(function(){
 $(".email-success").addClass("d-none");
+$(".email-fail").addClass("d-none");
 })
 
 

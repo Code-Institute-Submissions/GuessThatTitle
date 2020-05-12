@@ -309,6 +309,10 @@
                     <p class="complete-center">Thanks for your email! We'll get back to you soon.</p>
                     <i class="fas fa-window-close close-popup"></i>
                         </div>
+                    <div class="email-fail d-none">
+                    <p class="complete-center">Oops! An Error Occured. Please try again later.</p>
+                    <i class="fas fa-window-close close-popup"></i>
+                    </div>
                      
 					<div class="container p-0">
 						<div class="col-12 text-center pt-3">
@@ -340,18 +344,21 @@
                 type="text"
                 name="name"
                 placeholder="Your Name"
+                required
               />
 								<input
                 class="email-form"
                 type="email"
                 name="email"
                 placeholder="Your Email"
+                required
               />
 								<textarea
                 class="email-form"
                 name="message"
                 placeholder="Your Message"
                 max-size="300"
+                required
               ></textarea>
 								<input class="send-email-btn" type="submit" value="Send" />
             </form>

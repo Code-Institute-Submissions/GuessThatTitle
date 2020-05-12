@@ -12,7 +12,7 @@ function sendMail(contactForm) {
            $(".email-success").fadeIn(1000).removeClass("d-none");
 
         }, function(error) {
-            console.log("Failed", error)
+           $(".email-fail").fadeIn(1000).removeClass("d-none");
         });
         return false;
 }
