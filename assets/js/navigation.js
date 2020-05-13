@@ -20,19 +20,21 @@ setTimeout(startGame, 3000);
 
 $(".learn-more").click(function () {
 $(".displayvar").addClass("d-none");
-  $(".contain-menu").toggle("slidedown");
-  $(".contain-about-us").removeClass("d-none");
+$(".contain-menu").toggle("slidedown");
+$(".contain-about-us").removeClass("d-none");
 });
 
 $(".how-to").click(function () {
   $(".displayvar").addClass("d-none");
   $(".contain-menu").toggle("slidedown");
   $(".contain-how-to").removeClass("d-none");
+
 });
 
 $(".how-to-btn").click(function(){
 $(".displayvar").addClass("d-none");
 $(".contain-how-to").removeClass("d-none");
+
 });
 
 // Close email send popup

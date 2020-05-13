@@ -195,7 +195,14 @@
 .socials-list li {
   display: inline-block;
   font-size: 24px;
+  cursor: pointer;
 }
+
+.socials-list li:hover {
+    color: #e63946;
+}
+
+
 
 /* 4. Game Generals */
 
@@ -238,6 +245,7 @@
   width: 300px;
   background-color: #212429;
   color: white;
+  box-shadow: 0 2px 2px;
 }
 
 .contain-game-headings {
@@ -315,6 +323,7 @@ height: 50px;
 background-color: #e63946;
 color: white;
 border-radius: 3px;
+box-shadow: 0 2px 2px;
 }
 
 /* 8. How to play page */
@@ -463,6 +472,7 @@ border-radius: 3px;
   border-radius: 3px;
   margin: 10px;
   color: white;
+  box-shadow: 0 2px 2px;
 }
 
 .email-success {

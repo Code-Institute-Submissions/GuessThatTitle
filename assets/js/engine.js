@@ -18,6 +18,11 @@ let wordPosition;
 let answer;
 let arrayPositionSelect = 1;
 
+// Animation for how-to page
+let features;
+let wordAnimation;
+let lettersid = ["letterO", "letterC", "letterK"];
+
 // Audio
 const correctAnsAudio = new Audio("/assets/audio/correct2.mp3");
 correctAnsAudio.loop = false; //  Dont Loop
@@ -35,7 +40,7 @@ const roundWin = new Audio("/assets/audio/roundcomplete.mp3");
 roundWin.loop = false;
 roundWin.volume = 0.5;
 
-  $(".play-now-btn").click(function () {
+$(".play-now-btn").click(function () {
   $(".displayvar").addClass("d-none");
   $(".message-to-player").text("GOOD LUCK!");
   $(".splashscreen").hide().fadeIn(500).removeClass("d-none");
@@ -365,7 +370,7 @@ function startTimer() {
       clearInterval(timer);
       loseLife();
       if (numberOfLives >= 0) {
-      document.getElementById("lives").innerHTML = numberOfLives;
+        document.getElementById("lives").innerHTML = numberOfLives;
       }
       $("#input-answer").val(answer);
       setTimeout(doNext, 4000);
@@ -384,9 +389,9 @@ function restartTimer() {
 
 // When question is answered - move to next question
 function nextQuestion() {
-    questionNumber++;
-    console.log("You are on question: " + questionNumber);
-    console.log("Lives: " + numberOfLives);
+  questionNumber++;
+  console.log("You are on question: " + questionNumber);
+  console.log("Lives: " + numberOfLives);
 
   // empty text area and remove message
   $("#correct").fadeIn(500).addClass("d-none");
@@ -396,15 +401,12 @@ function nextQuestion() {
   arrayPositionSelect++;
   if (questionNumber < 5 && numberOfLives >= 0) {
     showQuestion(); // Dont need to call generate question (all questions generated)
-  }  else if (questionNumber > 4 && numberOfLives  >= 0) {
+  } else if (questionNumber > 4 && numberOfLives >= 0) {
     roundComplete();
     // Start Round
-  }
-  else if (numberOfLives < 0) {
+  } else if (numberOfLives < 0) {
     gameOver();
   }
- 
-
 }
 
 // Pass current question (costs a life)
@@ -418,7 +420,7 @@ function skipQuestion() {
     // Lose a life
     loseLife();
     if (numberOfLives >= 0) {
-    document.getElementById("lives").innerHTML = numberOfLives;
+      document.getElementById("lives").innerHTML = numberOfLives;
     }
     nextQuestion(); // Call next question
   }
@@ -436,14 +438,14 @@ function nextRound() {
   // Increase round position number
   roundPosition++;
   // Call topic selection
-$("#message-icon").text(" "); // Get rid of lives icon
+  $("#message-icon").text(" "); // Get rid of lives icon
   startRound();
   // Vary timer settings
 }
 
 // Round completed
 function roundComplete() {
-  roundWin.play();  
+  roundWin.play();
   numberOfLives++; // Add a life if they complete the round
   document.getElementById(
     "message-icon"
@@ -459,7 +461,7 @@ function roundComplete() {
 function loseLife() {
   // Play sound
   if (questionNumber != 4) {
-  wrongAnsAudio.play();
+    wrongAnsAudio.play();
   }
 
   var x = 1;
@@ -476,7 +478,7 @@ function loseLife() {
     }
   }
   if (numberOfLives >= 0) {
-  numberOfLives--;
+    numberOfLives--;
   }
 }
 
@@ -506,7 +508,7 @@ $(".end-game").click(function () {
 
 $(".start-again").click(function () {
   $(".contain-menu").toggle("slidedown");
-$(".try-again").addClass("d-none");
+  $(".try-again").addClass("d-none");
   startGame();
 });
 
@@ -531,11 +533,65 @@ function gameOver() {
   setVars();
 }
 
-
-$(".try-again").click(function() {
-startGame();
+$(".try-again").click(function () {
+  startGame();
 });
 
 $(".skip-question-btn").click(function () {
   skipQuestion();
 });
+
+function startAnimations() {
+  console.log("Animation Started");
+
+  // Check if interval has already been set - if it has then reset it
+  if (typeof features != null) {
+    clearInterval(features);
+    clearInterval(wordAnimation);
+  }
+  features = setInterval(animateFeatures, 3000);
+  wordAnimation = setInterval(animateWords, 2000);
+  /* Features Annimation */
+
+  function animateFeatures() {
+    $(".contain-feature")
+      .find(".toggle-feature")
+      .fadeIn("2000")
+      .toggleClass("d-none");
+  }
+
+  function animateWords() {
+    // Animate word ROCK
+    let x = -1;
+    let letterchange = setInterval(changeLetters, 500);
+
+    function changeLetters() {
+      x++;
+      if (x < 3) {
+      if (x == 0) {  
+      $("#" + lettersid[x]).text("O");
+      }
+      else if (x == 1) {  
+      $("#" + lettersid[x]).text("C");
+      }
+      else if (x == 2) {  
+      $("#" + lettersid[x]).text("K");
+     
+      }
+
+
+
+
+      }
+      else {
+          clearInterval(letterchange);
+          // Reset to _
+          for (i = 0; i < 3; i++) {
+           $("#" + lettersid[i]).text("_");
+          }
+          console.log("Interval Stopped")
+               
+      }
+    }
+  }
+}

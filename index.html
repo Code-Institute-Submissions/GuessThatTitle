@@ -97,6 +97,7 @@
               class="btn how-to-btn mt-3"
               data-role="none"
               data-ajax="false"
+              onclick="startAnimations()"
             >
               How to play
             </button>
@@ -246,7 +247,7 @@
 								</h4>
 								<div class="title-example-container m-auto">
 									<p class="complete-center exmaple-title-text">SCHOOL OF<br/>
-                                R _ _ _
+                                R <span id="letterO">_</span> <span id="letterC">_</span> <span id="letterK">_</span>
                                 </p>
 										<div class="type-answer-2">
 											<p class="complete-center">TYPE ANSWER</p>
@@ -264,24 +265,28 @@
 						</div>
 						<div class="row">
 							<div class="col-3 contain-feature text-center">
-								<div class="contain-feature-icon complete-center">
+                             <p class="toggle-feature d-none complete-center">Limited Lives!</p>
+								<div class="contain-feature-icon toggle-feature complete-center">
 									<i class="fas fa-heart feature-icon complete-center"></i>
 								</div>
 							</div>
 							<div class="col-3 contain-feature text-center">
-								<div class="contain-feature-icon-2 complete-center">
+                              <p class="toggle-feature d-none complete-center">Timer!</p>
+								<div class="contain-feature-icon-2 toggle-feature complete-center">
 									<i
                   class="fas fa-hourglass-end feature-icon complete-center"
                 ></i>
 								</div>
 							</div>
 							<div class="col-3 contain-feature text-center">
-								<div class="contain-feature-icon complete-center">
-									<i class="fas fa-forward feature-icon complete-center"></i>
+                            <p class="toggle-feature d-none complete-center">Skip Questions!</p>
+								<div class="contain-feature-icon  toggle-feature complete-center">
+									<i class="fas fa-forward feature-icon  complete-center"></i>
 								</div>
 							</div>
 							<div class="col-3 contain-feature text-center">
-								<div class="contain-feature-icon-2 complete-center">
+                            <p class="toggle-feature d-none complete-center">Gain Rewards!</p>
+								<div class="contain-feature-icon-2 toggle-feature  complete-center">
 									<i class="fas fa-plus-square feature-icon complete-center"></i>
 								</div>
 							</div>
@@ -377,7 +382,7 @@
 				<ul class="list-style-remove menu-list menu1 pt-4">
 					<li class="go-home">Home</li>
 					<li class="play-game">Play Game</li>
-					<li class="how-to">How to Play</li>
+					<li class="how-to" onclick="startAnimations()">How to Play</li>
 					<li class="learn-more">Learn More</li>
 				</ul>
 				<ul class="list-style-remove menu-list menu2 d-none pt-4">
