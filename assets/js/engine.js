@@ -58,7 +58,7 @@ function startGame() {
   $(".try-again").addClass("d-none"); // Remove try again button
   $(".menu1").addClass("d-none");
   $(".menu2").removeClass("d-none");
-  $(".skip-question-btn").css("background-color", "black"); // Reset Skip Button
+  $(".skip-question-btn").css("background-color", "#054a91"); // Reset Skip Button
   $("#message-icon").text(" "); // Get rid of lives icon
   console.log("show menu");
 }
@@ -107,9 +107,9 @@ function getTopics() {
 
     // Generate three different random numbers (don't want same topic selected twice)
     do {
-      x = Math.ceil(Math.random() * 20);
-      y = Math.ceil(Math.random() * 20);
-      z = Math.ceil(Math.random() * 20);
+      x = Math.ceil(Math.random() * 30);
+      y = Math.ceil(Math.random() * 30);
+      z = Math.ceil(Math.random() * 30);
     } while (x === y || y === z || z === x);
 
     // Select Topics from JSON (need to minus one since array starts at 0)
