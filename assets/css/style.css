@@ -394,33 +394,30 @@ box-shadow: 0 2px 2px;
 }
 
 .features-heading {
-  color: #212429;
+  color: white;
 }
 
-.contain-feature {
-  position: relative;
-  height: 80px;
+.feature-container {
+    margin-top: 20px;
+    background-color: #054a91;
+    color: white;
+    width: 240px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px;
 }
 
-.contain-feature-icon {
-  height: 50px;
-  width: 50px;
-  border-radius: 2px;
-  background-color: #e63946;
-  color: whitesmoke;
-}
-.contain-feature-icon-2 {
-  height: 50px;
-  width: 50px;
-  border-radius: 2px;
-  background-color: #054a91;
-  color: whitesmoke;
+
+.feature-list li {
+    padding: 2px;
 }
 
-.feature-icon {
-  font-size: 30px;
+.fa-radiation {
+    font-size: 20px;
 }
 
+.line{
+    background-color: white;
+}
 /* 9. About Page */
 
 .contain-infotext {

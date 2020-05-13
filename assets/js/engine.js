@@ -19,7 +19,6 @@ let answer;
 let arrayPositionSelect = 1;
 
 // Animation for how-to page
-let features;
 let wordAnimation;
 let lettersid = ["letterO", "letterC", "letterK"];
 
@@ -50,7 +49,6 @@ $(".play-now-btn").click(function () {
 // Called when the game is started
 function startGame() {
   setVars();
-  clearInterval(features); // Stop animations on how-to page
   clearInterval(wordAnimation); // Stop animations on how-to page
   console.log("Animations Stopped");
   getTopics();
@@ -548,20 +546,13 @@ function startAnimations() {
   console.log("Animation Started");
 
   // Check if interval has already been set - if it has then reset it
-  if (typeof features != null) {
-    clearInterval(features);
+  if (typeof wordAnimation != null) {
+ 
     clearInterval(wordAnimation);
   }
-  features = setInterval(animateFeatures, 3000);
+
   wordAnimation = setInterval(animateWords, 2000);
   /* Features Annimation */
-
-  function animateFeatures() {
-    $(".contain-feature")
-      .find(".toggle-feature")
-      .fadeIn("2000")
-      .toggleClass("d-none");
-  }
 
   function animateWords() {
     // Animate word ROCK
