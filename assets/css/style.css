@@ -211,6 +211,7 @@
   color: white;
   background-color: #e63946;
   border: none;
+  box-shadow: 0 2px 2px;
 }
 
 .round-number-text {

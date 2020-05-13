@@ -458,7 +458,9 @@ function roundComplete() {
 
 function loseLife() {
   // Play sound
+  if (questionNumber != 4) {
   wrongAnsAudio.play();
+  }
 
   var x = 1;
   var shakeheart = setInterval(shake, 100);
