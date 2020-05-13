@@ -1,38 +1,37 @@
-/* Change every time new game is started*/
 
-var roundPosition; // Track what round they are on
-var score; // Track their score
-var pageNumber;
+let roundPosition; // Track what round they are on
+let score; // Track their score
+let pageNumber;
 /* Change every Round*/
 
-var numberOfLives; // Store lives
-var numberOfPasses; // Store number of passes left
-var currentQuestionNumber; // Store what question they are on out of
-var questionNumber = 1; // Track what question they are on (out of 10)
-var topic;
-var tempQuestion = []; // Store question data temp before pushing array into quesiton array
-var questions = []; // store questions for each round
-var timerVal = 60;
+let numberOfLives; // Store lives
+let numberOfPasses; // Store number of passes left
+let currentQuestionNumber; // Store what question they are on out of
+let questionNumber = 1; // Track what question they are on (out of 10)
+let topic;
+let tempQuestion = []; // Store question data temp before pushing array into quesiton array
+let questions = []; // store questions for each round
+let timerVal = 60;
 /* Change every question */
 
-var timer; // used to display seconds left to answer question
-var questionText; // Store question text
-var yearClue; //  Store year film was made
-var lengthOfWord;
-var wordPosition;
-var answer;
-var arrayPositionSelect = 1;
+let timer; // used to display seconds left to answer question
+let questionText; // Store question text
+let yearClue; //  Store year film was made
+let lengthOfWord;
+let wordPosition;
+let answer;
+let arrayPositionSelect = 1;
 
 // Audio
-var correctAnsAudio = new Audio("/assets/audio/correct2.mp3");
+const correctAnsAudio = new Audio("/assets/audio/correct2.mp3");
 correctAnsAudio.loop = false; //  Dont Loop
 correctAnsAudio.volume = 0.5;
 
-var wrongAnsAudio = new Audio("/assets/audio/wrong.mp3");
+const wrongAnsAudio = new Audio("/assets/audio/wrong.mp3");
 wrongAnsAudio.loop = false; //  Dont Loop
 wrongAnsAudio.volume = 0.3;
 
-var timerAudio = new Audio("/assets/audio/beep.mp3");
+const timerAudio = new Audio("/assets/audio/beep.mp3");
 timerAudio.loop = false;
 timerAudio.volume = 0.5;
 
@@ -90,10 +89,10 @@ function getTopics() {
   }
 
   function createArray(data) {
-    var jsonData = data;
-    var x = 1;
-    var y = 1;
-    var z = 1;
+    let jsonData = data;
+    let x = 1;
+    let y = 1;
+    let z = 1;
 
     // Generate three different random numbers (don't want same topic selected twice)
     do {
@@ -103,9 +102,9 @@ function getTopics() {
     } while (x === y || y === z || z === x);
 
     // Select Topics from JSON (need to minus one since array starts at 0)
-    var topicOne = jsonData[Object.keys(jsonData)[x - 1]];
-    var topicTwo = jsonData[Object.keys(jsonData)[y - 1]];
-    var topicThree = jsonData[Object.keys(jsonData)[z - 1]];
+    let topicOne = jsonData[Object.keys(jsonData)[x - 1]];
+    let topicTwo = jsonData[Object.keys(jsonData)[y - 1]];
+    let topicThree = jsonData[Object.keys(jsonData)[z - 1]];
 
     console.log("X :" + x);
     console.log("Y :" + y);
@@ -140,12 +139,12 @@ function generateQuestion() {
   console.log("Question Number: " + questionNumber);
   function callApi(cb) {
     console.log("Getting data from page : " + pageNumber);
-    var URL =
+    let URL =
       "https://www.omdbapi.com/?apikey=c1466e63&s=" +
       topic +
       "&page=" +
       pageNumber; // Set url for query to api based on topic selected
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     // set url based on selected trending item
     xhr.open("GET", URL);
     xhr.send();
@@ -157,10 +156,10 @@ function generateQuestion() {
   }
 
   function processData(info) {
-    var movies = info;
+    let movies = info;
     // Select three random movie titles
-    var x = 1;
-    var y = 1;
+    let x = 1;
+    let y = 1;
 
     // Generate three different random numbers (don't want same topic selected twice)
     do {
@@ -168,27 +167,27 @@ function generateQuestion() {
       y = Math.round(Math.random() * 10);
     } while (x === y || x === 0 || y === 0);
 
-    var selected = movies.Search[x - 1];
+    let selected = movies.Search[x - 1];
     console.log(selected);
-    var movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
-    var movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
+    let movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
+    let movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
 
     // Create an array and then push into Questions Array
     tempQuestion = [movieTitle, movieYear];
     questions.push(tempQuestion);
 
-    var selected = movies.Search[y - 1];
+    let selected = movies.Search[y - 1];
     console.log(selected);
-    var movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
-    var movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
+    let movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
+    let movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
 
     // Create an array and then push into Questions Array
     tempQuestion = [movieTitle, movieYear];
     questions.push(tempQuestion);
   }
   // Generate two random numbers
-  var x = 1;
-  var y = 1;
+  let x = 1;
+  let y = 1;
   do {
     x = Math.round(Math.random() * 10);
     y = Math.round(Math.random() * 10);
@@ -216,14 +215,14 @@ function showQuestion() {
   console.log("Movie Year: " + movieYearData);
 
   // Break down the data
-  var titlewords = movieTitleData.split(" "); // Title stored in its own array
-  var titlelength = titlewords.length;
+  let titlewords = movieTitleData.split(" "); // Title stored in its own array
+  let titlelength = titlewords.length;
   console.log("Title lendth : " + titlelength);
   // Remove a random word from the title that isn't the topic word
 
   function removeWord() {
     // Generate random number between the length of the title and 1
-    var rand;
+    let rand;
     do {
       rand = Math.round(Math.random() * 10);
     } while (rand > titlelength || rand === 0);
@@ -234,7 +233,7 @@ function showQuestion() {
     answer = answer.replace(/[#?!,:]/g, "");
     // Use answer length to generate string to replace missing word with
 
-    var replacement = [];
+    let replacement = [];
 
     // If answer is just one letter - replace it with an underline
     // If answer is greater than one - replace the remaining letters with underline
@@ -251,9 +250,9 @@ function showQuestion() {
 
     // If the answer is only one letter - we don't give them a clue - if not, we give them the first letter
     if (answer.length === 1) {
-      var string = replacement.join();
+      let string = replacement.join();
     } else {
-      var string = answer[0] + replacement.join();
+      let string = answer[0] + replacement.join();
       string.replace(/,/g, "");
     }
 
@@ -288,8 +287,8 @@ function showQuestion() {
   // Build HTML
   // Remove Loading Giff
   // Input question data into template
-  var displayQ = titlewords.toString();
-  var displayQ2 = displayQ.replace(/,/g, " ");
+  let displayQ = titlewords.toString();
+  let displayQ2 = displayQ.replace(/,/g, " ");
 
   document.getElementById("question_number").innerHTML = questionNumber;
   // Dont change to -1 if lives are at 0
@@ -312,14 +311,14 @@ function showQuestion() {
 function checkAnswer() {
   // Allow the user to either type the full word or the rest of the word minus the given letter
   if (answer.length == 1) {
-    var check = $("#input-answer").val();
+    let check = $("#input-answer").val();
   } else {
-    var check = answer[0] + $("#input-answer").val();
-    var check2 = $("#input-answer").val();
+    let check = answer[0] + $("#input-answer").val();
+    let check2 = $("#input-answer").val();
   }
 
   // need to strip answer of special strings (, : ? etc)
-  var stripAns = answer.replace(/[#?!,:]/g, "");
+  let stripAns = answer.replace(/[#?!,:]/g, "");
   if (
     check.toString().toLowerCase() == stripAns.toString().toLowerCase() ||
     check2.toString().toLowerCase() == stripAns.toString().toLowerCase()
@@ -446,8 +445,8 @@ function loseLife() {
   // Play sound
   wrongAnsAudio.play();
 
-  var x = 1;
-  var shakeheart = setInterval(shake, 100);
+  let x = 1;
+  let shakeheart = setInterval(shake, 100);
 
   function shake() {
     if (x < 5) {

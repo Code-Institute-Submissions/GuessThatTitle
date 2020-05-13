@@ -2,8 +2,8 @@
 $(window).load(function() { 
 
 
-var $images = $('.images-to-load img'); // Store images in a variable 
-var loaded_images_count = 0;
+let $images = $('.images-to-load img'); // Store images in a variable 
+let loaded_images_count = 0;
 
 $images.load(function(){
     loaded_images_count++;
