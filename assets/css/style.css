@@ -58,6 +58,10 @@
   width: 60px;
 }
 
+.loading-style {
+    padding-top: 200px;
+}
+
 /* 2. Nar-Bar */
 
 .nav-bar {
@@ -66,6 +70,7 @@
   height: 7vh;
   background-color: #f9c80e;
   z-index: 2;
+  box-shadow: 0 1px 1px;
 }
 
 .menu-col {
@@ -136,6 +141,7 @@
   font-size: 80px;
   padding: 10px;
   color: #e63946;
+  text-shadow: 2px 8px 8px;
 }
 
 .hero-text-container {
@@ -161,6 +167,7 @@
   width: 150px;
   height: 50px;
   padding: 5px;
+  box-shadow: 0 2px 2px;
 }
 
 .how-to-btn {
@@ -169,6 +176,7 @@
   width: 150px;
   padding: 5px;
   height: 50px;
+  box-shadow: 0 2px 2px;
 }
 
 /* 3.3 Socials List */
@@ -285,11 +293,10 @@
 
 .message-to-player {
   color: #212429;
-  margin-top: 0px;
+ padding-top: 200px !important;
 }
 
 .message-icon-style {
-  padding-top: 300px;
   font-size: 25px !important;
 }
 
@@ -297,6 +304,16 @@
   font-size: 25px;
   color: red;
   padding-left: 5px;
+  
+}
+
+.try-again {
+position: relative;
+width: 200px;
+height: 50px;
+background-color: #e63946;
+color: white;
+border-radius: 3px;
 }
 
 /* 8. How to play page */

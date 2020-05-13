@@ -51,9 +51,9 @@
 		<img src="assets/images/bg/pop.png" alt="background" />
     </div>
 
-		<div class="loading">
+		<div class="loading text-center">
 			<img
-        class="complete-center"
+        class="loading-style"
         src="assets/images/loading/loading.gif"
         alt="loading"
       />
@@ -72,7 +72,7 @@
 
 			<div class="container-fluid loaded-container d-none p-0">
 				<!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
-				<div class="page-body text-center displayvar d-none">
+				<div class="page-body text-center displayvar">
 					<div class="row">
 						<div class="col-12 hero-text-container text-center">
 							<h2 class="hero-heading">
@@ -208,12 +208,13 @@
 					</div>
 
 					<div class="container splashscreen displayvar text-center d-none">
-						<h2 class="message-to-player complete-center"></h2>
+						<h2 class="message-to-player"></h2>
 						<div class="message-icon-style" id="message-icon"></div>
+                        <div class="try-again m-auto d-none"><p class="complete-center">Try Again</p></div>
 					</div>
 				</div>
 
-				<div class="contain-how-to pt-2 displayvar pt-3 pb-3">
+				<div class="contain-how-to pt-2 displayvar pt-3 pb-3 d-none">
 					<div class="container">
 						<div class="row">
 							<div class="col-12 text-center">
@@ -329,7 +330,7 @@
 								The GTT engine runs off Javascript. It draws all information from
 								the
 								<a href="http://www.omdbapi.com/" target="_blank">OMDb API</a> - a
-								large database on films and tv shows. It also draws resources from
+								large database of films and tv shows. It also draws resources from
 								JQuery and Bootstrap libraries.
 							</p>
 						</div>

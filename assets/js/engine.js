@@ -1,22 +1,18 @@
+/* Change every time new game is started*/
 
 let roundPosition; // Track what round they are on
-let score; // Track their score
 let pageNumber;
 /* Change every Round*/
 
 let numberOfLives; // Store lives
-let numberOfPasses; // Store number of passes left
 let currentQuestionNumber; // Store what question they are on out of
-let questionNumber = 1; // Track what question they are on (out of 10)
+var questionNumber; // Track what question they are on (out of 10)
 let topic;
 let tempQuestion = []; // Store question data temp before pushing array into quesiton array
 let questions = []; // store questions for each round
-let timerVal = 60;
-/* Change every question */
+let timerVal = 60; /* Initial value - Change every question */
 
 let timer; // used to display seconds left to answer question
-let questionText; // Store question text
-let yearClue; //  Store year film was made
 let lengthOfWord;
 let wordPosition;
 let answer;
@@ -35,7 +31,11 @@ const timerAudio = new Audio("/assets/audio/beep.mp3");
 timerAudio.loop = false;
 timerAudio.volume = 0.5;
 
-$(".play-now-btn").click(function () {
+const roundWin = new Audio("/assets/audio/roundcomplete.mp3");
+roundWin.loop = false;
+roundWin.volume = 0.5;
+
+  $(".play-now-btn").click(function () {
   $(".displayvar").addClass("d-none");
   $(".message-to-player").text("GOOD LUCK!");
   $(".splashscreen").hide().fadeIn(500).removeClass("d-none");
@@ -47,8 +47,11 @@ function startGame() {
   setVars();
   getTopics();
   displayTopicChoice();
+  $(".try-again").addClass("d-none"); // Remove try again button
   $(".menu1").addClass("d-none");
   $(".menu2").removeClass("d-none");
+  $(".skip-question-btn").css("background-color", "black"); // Reset Skip Button
+  $("#message-icon").text(" "); // Get rid of lives icon
   console.log("show menu");
 }
 
@@ -89,10 +92,10 @@ function getTopics() {
   }
 
   function createArray(data) {
-    let jsonData = data;
-    let x = 1;
-    let y = 1;
-    let z = 1;
+    var jsonData = data;
+    var x = 1;
+    var y = 1;
+    var z = 1;
 
     // Generate three different random numbers (don't want same topic selected twice)
     do {
@@ -102,9 +105,9 @@ function getTopics() {
     } while (x === y || y === z || z === x);
 
     // Select Topics from JSON (need to minus one since array starts at 0)
-    let topicOne = jsonData[Object.keys(jsonData)[x - 1]];
-    let topicTwo = jsonData[Object.keys(jsonData)[y - 1]];
-    let topicThree = jsonData[Object.keys(jsonData)[z - 1]];
+    var topicOne = jsonData[Object.keys(jsonData)[x - 1]];
+    var topicTwo = jsonData[Object.keys(jsonData)[y - 1]];
+    var topicThree = jsonData[Object.keys(jsonData)[z - 1]];
 
     console.log("X :" + x);
     console.log("Y :" + y);
@@ -139,12 +142,12 @@ function generateQuestion() {
   console.log("Question Number: " + questionNumber);
   function callApi(cb) {
     console.log("Getting data from page : " + pageNumber);
-    let URL =
+    var URL =
       "https://www.omdbapi.com/?apikey=c1466e63&s=" +
       topic +
       "&page=" +
       pageNumber; // Set url for query to api based on topic selected
-    let xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     // set url based on selected trending item
     xhr.open("GET", URL);
     xhr.send();
@@ -156,10 +159,10 @@ function generateQuestion() {
   }
 
   function processData(info) {
-    let movies = info;
+    var movies = info;
     // Select three random movie titles
-    let x = 1;
-    let y = 1;
+    var x = 1;
+    var y = 1;
 
     // Generate three different random numbers (don't want same topic selected twice)
     do {
@@ -167,27 +170,27 @@ function generateQuestion() {
       y = Math.round(Math.random() * 10);
     } while (x === y || x === 0 || y === 0);
 
-    let selected = movies.Search[x - 1];
+    var selected = movies.Search[x - 1];
     console.log(selected);
-    let movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
-    let movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
+    var movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
+    var movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
 
     // Create an array and then push into Questions Array
     tempQuestion = [movieTitle, movieYear];
     questions.push(tempQuestion);
 
-    let selected = movies.Search[y - 1];
+    var selected = movies.Search[y - 1];
     console.log(selected);
-    let movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
-    let movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
+    var movieTitle = selected[Object.keys(selected)[0]]; // Movie Title - Push to Array
+    var movieYear = selected[Object.keys(selected)[1]]; // Movie Year - Push to Array
 
     // Create an array and then push into Questions Array
     tempQuestion = [movieTitle, movieYear];
     questions.push(tempQuestion);
   }
   // Generate two random numbers
-  let x = 1;
-  let y = 1;
+  var x = 1;
+  var y = 1;
   do {
     x = Math.round(Math.random() * 10);
     y = Math.round(Math.random() * 10);
@@ -215,14 +218,14 @@ function showQuestion() {
   console.log("Movie Year: " + movieYearData);
 
   // Break down the data
-  let titlewords = movieTitleData.split(" "); // Title stored in its own array
-  let titlelength = titlewords.length;
+  var titlewords = movieTitleData.split(" "); // Title stored in its own array
+  var titlelength = titlewords.length;
   console.log("Title lendth : " + titlelength);
   // Remove a random word from the title that isn't the topic word
 
   function removeWord() {
     // Generate random number between the length of the title and 1
-    let rand;
+    var rand;
     do {
       rand = Math.round(Math.random() * 10);
     } while (rand > titlelength || rand === 0);
@@ -233,7 +236,7 @@ function showQuestion() {
     answer = answer.replace(/[#?!,:]/g, "");
     // Use answer length to generate string to replace missing word with
 
-    let replacement = [];
+    var replacement = [];
 
     // If answer is just one letter - replace it with an underline
     // If answer is greater than one - replace the remaining letters with underline
@@ -250,9 +253,9 @@ function showQuestion() {
 
     // If the answer is only one letter - we don't give them a clue - if not, we give them the first letter
     if (answer.length === 1) {
-      let string = replacement.join();
+      var string = replacement.join();
     } else {
-      let string = answer[0] + replacement.join();
+      var string = answer[0] + replacement.join();
       string.replace(/,/g, "");
     }
 
@@ -287,12 +290,12 @@ function showQuestion() {
   // Build HTML
   // Remove Loading Giff
   // Input question data into template
-  let displayQ = titlewords.toString();
-  let displayQ2 = displayQ.replace(/,/g, " ");
+  var displayQ = titlewords.toString();
+  var displayQ2 = displayQ.replace(/,/g, " ");
 
   document.getElementById("question_number").innerHTML = questionNumber;
   // Dont change to -1 if lives are at 0
-  if (numberOfLives > 0) {
+  if (numberOfLives >= 0) {
     document.getElementById("lives").innerHTML = numberOfLives;
   }
   $(".display-title").text(displayQ2);
@@ -311,14 +314,14 @@ function showQuestion() {
 function checkAnswer() {
   // Allow the user to either type the full word or the rest of the word minus the given letter
   if (answer.length == 1) {
-    let check = $("#input-answer").val();
+    var check = $("#input-answer").val();
   } else {
-    let check = answer[0] + $("#input-answer").val();
-    let check2 = $("#input-answer").val();
+    var check = answer[0] + $("#input-answer").val();
+    var check2 = $("#input-answer").val();
   }
 
   // need to strip answer of special strings (, : ? etc)
-  let stripAns = answer.replace(/[#?!,:]/g, "");
+  var stripAns = answer.replace(/[#?!,:]/g, "");
   if (
     check.toString().toLowerCase() == stripAns.toString().toLowerCase() ||
     check2.toString().toLowerCase() == stripAns.toString().toLowerCase()
@@ -361,7 +364,9 @@ function startTimer() {
       // Show the correct answer here
       clearInterval(timer);
       loseLife();
+      if (numberOfLives >= 0) {
       document.getElementById("lives").innerHTML = numberOfLives;
+      }
       $("#input-answer").val(answer);
       setTimeout(doNext, 4000);
 
@@ -379,21 +384,27 @@ function restartTimer() {
 
 // When question is answered - move to next question
 function nextQuestion() {
+    questionNumber++;
+    console.log("You are on question: " + questionNumber);
+    console.log("Lives: " + numberOfLives);
+
   // empty text area and remove message
   $("#correct").fadeIn(500).addClass("d-none");
-
   $("#input-answer").val("");
   $("#input-answer").css("color", "#212429");
-  questionNumber++;
+
   arrayPositionSelect++;
   if (questionNumber < 5 && numberOfLives >= 0) {
     showQuestion(); // Dont need to call generate question (all questions generated)
-  } else if (numberOfLives < 1) {
-    gameOver();
-  } else if (questionNumber >= 5) {
+  }  else if (questionNumber > 4 && numberOfLives  >= 0) {
     roundComplete();
     // Start Round
   }
+  else if (numberOfLives < 0) {
+    gameOver();
+  }
+ 
+
 }
 
 // Pass current question (costs a life)
@@ -406,7 +417,9 @@ function skipQuestion() {
   } else {
     // Lose a life
     loseLife();
+    if (numberOfLives >= 0) {
     document.getElementById("lives").innerHTML = numberOfLives;
+    }
     nextQuestion(); // Call next question
   }
 }
@@ -423,12 +436,14 @@ function nextRound() {
   // Increase round position number
   roundPosition++;
   // Call topic selection
+$("#message-icon").text(" "); // Get rid of lives icon
   startRound();
   // Vary timer settings
 }
 
 // Round completed
 function roundComplete() {
+  roundWin.play();  
   numberOfLives++; // Add a life if they complete the round
   document.getElementById(
     "message-icon"
@@ -445,8 +460,8 @@ function loseLife() {
   // Play sound
   wrongAnsAudio.play();
 
-  let x = 1;
-  let shakeheart = setInterval(shake, 100);
+  var x = 1;
+  var shakeheart = setInterval(shake, 100);
 
   function shake() {
     if (x < 5) {
@@ -458,7 +473,7 @@ function loseLife() {
       clearInterval(shakeheart);
     }
   }
-  if (numberOfLives > 0) {
+  if (numberOfLives >= 0) {
   numberOfLives--;
   }
 }
@@ -471,12 +486,14 @@ $(".audio-icon").click(function () {
     correctAnsAudio.volume = 0;
     wrongAnsAudio.volime = 0;
     timerAudio.volume = 0;
+    roundWin.volume = 0;
     console.log("Sound Muted");
   } else if (correctAnsAudio.volume == 0) {
     $(this).removeClass("fa-volume-mute").addClass("fa-volume-up");
     correctAnsAudio.volume = 0.5;
     wrongAnsAudio.volime = 0.3;
     timerAudio.volume = 0.5;
+    roundWin.volume = 0.5;
     console.log("Sound On");
   }
 });
@@ -487,6 +504,7 @@ $(".end-game").click(function () {
 
 $(".start-again").click(function () {
   $(".contain-menu").toggle("slidedown");
+$(".try-again").addClass("d-none");
   startGame();
 });
 
@@ -498,6 +516,7 @@ function quit() {
   $(".displayvar").addClass("d-none");
   $(".contain-menu").toggle("slidedown");
   $(".page-body").removeClass("d-none");
+  $(".try-again").addClass("d-none");
 }
 
 // Called when they are out of lives (by skipping questions or running out of time)
@@ -505,9 +524,15 @@ function gameOver() {
   $(".displayvar").addClass("d-none");
   $("#message-icon").text(" "); // Get rid of lives icon
   $(".message-to-player").text("Game Over :( ");
+  $(".try-again").removeClass("d-none");
   $(".splashscreen").removeClass("d-none");
   setVars();
 }
+
+
+$(".try-again").click(function() {
+startGame();
+});
 
 $(".skip-question-btn").click(function () {
   skipQuestion();
