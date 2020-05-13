@@ -345,11 +345,12 @@ function checkAnswer() {
 // Start the timer for each question
 function startTimer() {
   // Cap timer at 10 seconds so it can't go any lower
-  if (timerVal <= 10) {
-    timerVal = 10;
-  } else {
+    
     timerVal = 60 / roundPosition;
-  }
+    
+    if (timerVal < 10) {
+        timerVal = 10;
+    }
 
   clearInterval(timer);
   // Use roundNumber to determine how quick it goes
