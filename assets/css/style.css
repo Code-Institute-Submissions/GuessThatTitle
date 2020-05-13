@@ -281,6 +281,10 @@
   border-bottom: 2px solid #212429;
 }
 
+#correct {
+    color: green;
+}
+
 /* 6.1 Timer Styling */
 
 .display-timer {

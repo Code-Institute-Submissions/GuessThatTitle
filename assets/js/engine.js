@@ -334,7 +334,7 @@ function checkAnswer() {
   ) {
     $("#input-answer").css("color", "green");
     correctAnsAudio.play();
-    $("#correct").fadeIn(500).toggleClass("d-none");
+    $("#correct").fadeIn(1000).toggleClass("d-none");
     clearInterval(timer);
     setTimeout(nextQuestion, 2000);
   } else {
