@@ -24,19 +24,19 @@ let wordAnimation;
 let lettersid = ["letterO", "letterC", "letterK"];
 
 // Audio
-const correctAnsAudio = new Audio("ms2/assets/audio/correct2.mp3");
+const correctAnsAudio = new Audio("assets/audio/correct2.mp3");
 correctAnsAudio.loop = false; //  Dont Loop
 correctAnsAudio.volume = 0.5;
 
-const wrongAnsAudio = new Audio("ms2//assets/audio/wrong.mp3");
+const wrongAnsAudio = new Audio("assets/audio/wrong.mp3");
 wrongAnsAudio.loop = false; //  Dont Loop
 wrongAnsAudio.volume = 0.3;
 
-const timerAudio = new Audio("ms2/assets/audio/beep.mp3");
+const timerAudio = new Audio("assets/audio/beep.mp3");
 timerAudio.loop = false;
 timerAudio.volume = 0.5;
 
-const roundWin = new Audio("ms2/assets/audio/roundcomplete.mp3");
+const roundWin = new Audio("assets/audio/roundcomplete.mp3");
 roundWin.loop = false;
 roundWin.volume = 0.5;
 
