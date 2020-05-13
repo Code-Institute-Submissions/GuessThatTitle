@@ -50,6 +50,9 @@ $(".play-now-btn").click(function () {
 // Called when the game is started
 function startGame() {
   setVars();
+  clearInterval(features); // Stop animations on how-to page
+  clearInterval(wordAnimation); // Stop animations on how-to page
+  console.log("Animations Stopped");
   getTopics();
   displayTopicChoice();
   $(".try-again").addClass("d-none"); // Remove try again button
@@ -562,35 +565,26 @@ function startAnimations() {
 
   function animateWords() {
     // Animate word ROCK
-    let x = -1;
+    let t = -1;
     let letterchange = setInterval(changeLetters, 500);
 
     function changeLetters() {
-      x++;
-      if (x < 3) {
-      if (x == 0) {  
-      $("#" + lettersid[x]).text("O");
-      }
-      else if (x == 1) {  
-      $("#" + lettersid[x]).text("C");
-      }
-      else if (x == 2) {  
-      $("#" + lettersid[x]).text("K");
-     
-      }
-
-
-
-
-      }
-      else {
-          clearInterval(letterchange);
-          // Reset to _
-          for (i = 0; i < 3; i++) {
-           $("#" + lettersid[i]).text("_");
-          }
-          console.log("Interval Stopped")
-               
+      t++;
+      if (t < 3) {
+        if (t == 0) {
+          $("#" + lettersid[t]).text("O");
+        } else if (t == 1) {
+          $("#" + lettersid[t]).text("C");
+        } else if (t == 2) {
+          $("#" + lettersid[t]).text("K");
+        }
+      } else {
+        clearInterval(letterchange);
+        // Reset to _
+        for (i = 0; i < 3; i++) {
+          $("#" + lettersid[i]).text("_");
+        }
+        console.log("Interval Stopped");
       }
     }
   }
