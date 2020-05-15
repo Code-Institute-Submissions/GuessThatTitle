@@ -23,6 +23,16 @@ time is cut in half. How many rounds can you complete before you run out of live
    - [**Design**](#design)
    - [**Surface**](#surface)
 
+2. [**Features**](#features)
+    - [**Features Implemented**](#Features-Implemented)
+    - [**Possible Future Features**](#Futures-Features)
+
+3. [**Technologies Used**](#technologies-used)
+    - [**Languages Used**](#Languages-Used)
+    - [**Libraries Used**](#Libraries-Used)
+
+4. [**Testing**](#testing)
+
 ## UX
 
 ### [**Strategy**](#strategy)
@@ -202,3 +212,125 @@ Again, our colour scheme needs to be bright, fun, but not overwheling. For this 
 
 The copy for the website should be short and to the point. It should be easy to read against colours. 
 I have used these principles to guide the writing of copy for the website. 
+
+
+
+
+## FEATURES
+
+[**Features Implemented**](#Features-Implemented)
+
+### General Site Features
+
+#### Dropdown Menu
+A dropdown menu is included throughout the game to allow users to easily navigate the site
+
+#### Contact Us 
+A form allows user to send an email with the query
+
+### Game Features
+
+#### Play Game 
+Multiple play now buttons are included to launch the game 
+
+#### Lives 
+The game features a 'lives' system which tracks how many lives the user has left (Starts at 3)
+When they run out of lives and cannot answer a question correctly, the game is over
+
+#### Question Number Display 
+There are 4 questions per round - the game tracks the question number the user is on and displays it to them 
+in the top left corner. 
+
+#### Skip Question 
+This function allows users to skip the question they are currently presented it. It costs a life to skip a question. 
+If the user has no lives left - this function us disabled and a message is given to the user 'No lives left'
+
+#### Timer 
+Each round the timer is set to a different value. The value of the timer is a function of the Round number. 
+Round 1 = 60 / roundnumber = 60 seconds 
+Round 2 = 60 / roundnumber = 30 seconds 
+
+This continues until the timer reachers a value of 10 seconds which is the minumum size of the timer. 
+The timer counts down each question and if the user does not answer the question correctly in the time allocated, they lose a life. 
+The correct answer is then displayed to the user. 
+
+#### Choose Topic
+
+The user has the option to choose a theme or topic that their questions will be based on for the round. 
+For examlpe, if they choose 'School', they will only get questions where 'School' is part of the answer. (For example, School of Rock)
+
+Topics are loaded and chosen at random from a JSON file (assets/js/topics.JSON)
+
+There are currently 30 topics available - The game will generate three unique random numbers between 1 and 30 and select three different
+words from the list. 
+
+#### Display Questions 
+Each round has 4 questions that are based on the topic choosen. When the topic is choosen, the game will query the OMDB API with the choosen 
+topic. The API returns results in pages (with 10 movies per page). 
+The game will generate two random numbers between 1 and 10 and will choose 2 films from page number *random number* and page number *random number*. 
+This ensures that if the user is presented with and selects the same topic twice, they are unlikely to receive the same question set twice.
+
+When the missing word is choosen, special characters are removed to make it easier. For example, if the answer was Rock!, if the user types 'rock', they will
+get the question correct. 
+
+#### Clue 
+The game identifies the missing word and selects the first letter of that word. It will then give that letter to the user as a clue to what the answer might be. 
+It also generates underscores ('_') for the reamining missing letters to give the user an idea of how long the answer is.
+
+
+#### Type Answer 
+There is a input box provided for the user to type their answer. This is monitored to check if the answer is correct each time the user inputs something. 
+The removes the need for a 'Submit Answer' button and allows for a smoother experience. The input box also formats the answer in the folloowing ways
+- Answer is converted to lowercase 
+- The user may either type the first given letter or leave it out (either will return a correct answer)
+
+#### Audio 
+The game features a number of audio files to provide feedback to the user. 
+ - When the timer reaches 10 seconds left, each second will output a 'beep noise' to the user (assets/audio/beep.mp3) 
+ - When the user gets an answer correct, the game will output a ding (assets/audio/correct2.mp3)
+ - When the user runs out of time or skips a question, the game outputs an 'Life lost' sound (assets/audio/wrong.mp3)
+ - When the user completes a round, they will hear a success jingle (assets/audio/roundcomplete.mp3)
+
+ #### Mute Audio 
+ The NavBar features a Mute Audio function that can be accessed at any stage during the game. This allows the user to mute/unmute 
+ all game sounds 
+
+ #### Restart Game 
+ When the user sees the game over splash screen, they are presented with an option to 'Restart the Game'
+
+ #### Quit 
+ When the game begins, A quit game option becomes availabe in the dropdown menu and can be accessed at any time thoughout the game
+
+
+[**Possible Future Features**](#Futures-Features)
+
+1. Given that the topics are taken from a JSON file, there is scope to expand the topics available to any number of topics. This can be easily 
+implemented by adding to the JSON file and altering the code to generate a random number between 1 and "Size of new Json List"
+
+2. The API also offers poster functionality. You can retrive the poster associated with the movie in question. However, to get a key for this feature costs money. 
+There is scope to present the user with the poster when they get the answer correct, however given that is costs money I did not implement it in this version. 
+
+
+## Technologies Used 
+
+[**Languages Used**](#Languages-Used)
+HTML5, CSS3, Javascript 
+
+[**Libraries Used**](#Libraries-Used)
+* <a href="http://www.omdbapi.com/">OMDB API</a> - The ApI used to get movie title informaiton 
+* <a href="https://getbootstrap.com/">Bootstrap 4 </a> - Used for responsive design 
+* <a href="https://jquery.com/">JQuery </a> - DOM manupulation 
+* <a href="https://jqueryui.com/">JQuery UI</a> - Added effects for JQuery (Menu SlideIn)
+* <a href="https://jquerymobile.com/">JQuery Mobile</a> - Added effects for Jquery on mobile 
+* <a href="https://fontawesome.com/">Font Awesome </a> -Icons 
+* <a href="https://fonts.google.com/">Google Fonts</a> - Typeography 
+* <a href="https://www.emailjs.com/">EmailJS</a> - Sending emails from contact us form
+* <a href="https://github.com/">GitHub</a> - Used for version control and code hosting - Github pages used to host the final version of the game
+* <a href="https://gitpod.io/">GitPod</a> - Used as an online IDE
+
+// INCLUDE TESTING TECHNOLOGY USED HERE TOO!
+
+
+## Testing 
+
+
