@@ -186,4 +186,19 @@ smoother user experience.
 
 ### [**Surface**](#surface)
 
+This section is concerned with Typography, Color schemes, imagery, and brand identity 
 
+#### Typography 
+Given that our app is a game and its primary use is entertainment, the typography should be fun and simple.
+I decided to use Rubik given that it has these properties. 
+
+#### Colour Scheme
+Again, our colour scheme needs to be bright, fun, but not overwheling. For this reason I choose a simple colour scheme incorporating slightly 
+'softer' versions of primary colours (see below). 
+
+<img src="readme-images/palette.png" alt="colour palette" width=  "500px">
+
+#### Copy 
+
+The copy for the website should be short and to the point. It should be easy to read against colours. 
+I have used these principles to guide the writing of copy for the website. 
