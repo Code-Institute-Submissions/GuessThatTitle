@@ -218,7 +218,7 @@ I have used these principles to guide the writing of copy for the website.
 
 ## FEATURES
 
-[**Features Implemented**](#Features-Implemented)
+## Features-Implemented
 
 ### General Site Features
 
@@ -314,6 +314,7 @@ There is scope to present the user with the poster when they get the answer corr
 ## Technologies Used 
 
 [**Languages Used**](#Languages-Used)
+
 HTML5, CSS3, Javascript 
 
 [**Libraries Used**](#Libraries-Used)
@@ -333,4 +334,56 @@ HTML5, CSS3, Javascript
 
 ## Testing 
 
+Testing was carried out in a number of ways for this site. 
 
+#### General Site Tests 
+ - To begin testing, I started on the home page. All interactive elements were checked first. On Desktop, any hover effects/color changes  
+were checked (social media links). On mobile, the same effects were checked when links were clicked. 
+
+ - I then moved on to hard link checking. Every link on the page was checked to ensure that it directed the user to the correct page. Every button was clicked and checked that 
+it directed the user to the correct page.
+
+ - Any links that activated popups (send email success) were checked that they functioned correctly. Allpopups were checked to see if the 
+'close' buttons function correctly. 
+
+ - The site was then tested on multiple screen sizes and orientations (horizontal & vertical) using Chrome Developer Tools. 
+All text was checked to make sure it was easily readible on any screen size. Item spacing was checked to make sure there was sufficient spacing between all elements on all screen sizes.
+
+
+#### Basic Game Function Testing (User Testing) 
+- I started the game and made sure topics were been loaded form tge jSON file directly. 
+
+- I played muiltple rounds of the game to ensure the timer, lives, and question number features were working correctly
+
+- I checked that the quit game function was displayed during the game in the menu and that it returned me to the home page 
+
+- I checked that the restart game function was working correctly both in the menu and end game splash screen.
+
+- I checked that all sounds were playing as they should and that when the mute option was selected, the audio did not play 
+
+- I checked that the input answer function was working by typing incorrect and corret answer - I checked that I could
+either include the first letter of the nanswer or leave it out. I checked that letter casing didn't not effect the answer input
+
+#### Code Validation 
+- HTML code was ran though a HTML validator to ensure there were no errors (https://validator.w3.org/#validate_by_input)
+- CSS code was ran though a CSS validator to ensure there were no errors (https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+
+
+
+
+#### Jasmine Testing 
+
+
+
+
+
+#### Beta Testing 
+I shared the beta version of the game with roughly ten individuals for feedback. The following feedback was provided and adjustments were made:
+
+- Issue: The keyboard on mobile was covering the 'Correct Answer' notification.
+- Fix: The correct answer notification was moved to just below the timer to ensure this can't happen 
+
+- Issue: The 'How to Play' wasn't clear enough in terms of how the game works. Some users felt a bit confused when they first started playing 
+- Fix: The How to play section was made clearer, and the animcation of the answer being inputted was added. A list with number of lives and 
+when you will lose a life was also added to the How to Play page.
