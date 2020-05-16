@@ -368,14 +368,14 @@ either include the first letter of the nanswer or leave it out. I checked that l
 - HTML code was ran though a HTML validator to ensure there were no errors (https://validator.w3.org/#validate_by_input)
 - CSS code was ran though a CSS validator to ensure there were no errors (https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-
-
-
-
 #### Jasmine Testing 
+Jasmine testing was used to ensure all initial variables were set correctly when the game starts.
+- Testing page can be found at: jasmine/testing.html 
+- Jasmine Spec found at jasmine/specs/enginespec.js
+- Game Engine tested found at assets/js/engine.js 
 
-
-
+After writing the test, I changed the variables in the engine.js file to check that the test would fail.
+I then set the variables were correctly and re-ran the test to make sure it passed. 
 
 
 #### Beta Testing 

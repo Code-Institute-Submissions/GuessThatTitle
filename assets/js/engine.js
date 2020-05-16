@@ -61,8 +61,6 @@ function startGame() {
   console.log("show menu");
 }
 
-function transition() {}
-
 // Set variable values for start of game
 function setVars() {
   numberOfLives = 3;
@@ -144,6 +142,8 @@ $(".choose-topic-btn").click(function () {
 
 // Generate the question
 function generateQuestion() {
+  var x;
+  var y;
   // Called after data is gathered
   console.log("Question Number: " + questionNumber);
   function callApi(cb) {
@@ -167,8 +167,8 @@ function generateQuestion() {
   function processData(info) {
     var movies = info;
     // Select three random movie titles
-    var x = 1;
-    var y = 1;
+    x = 1;
+    y = 1;
 
     // Generate three different random numbers (don't want same topic selected twice)
     do {
@@ -345,12 +345,12 @@ function checkAnswer() {
 // Start the timer for each question
 function startTimer() {
   // Cap timer at 10 seconds so it can't go any lower
-    
-    timerVal = 60 / roundPosition;
-    
-    if (timerVal < 10) {
-        timerVal = 10;
-    }
+
+  timerVal = 60 / roundPosition;
+
+  if (timerVal < 10) {
+    timerVal = 10;
+  }
 
   clearInterval(timer);
   // Use roundNumber to determine how quick it goes
@@ -548,7 +548,6 @@ function startAnimations() {
 
   // Check if interval has already been set - if it has then reset it
   if (typeof wordAnimation != null) {
- 
     clearInterval(wordAnimation);
   }
 
