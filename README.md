@@ -313,7 +313,7 @@ The game features a number of audio files to provide feedback to the user.
  When the game begins, A quit game option becomes availabe in the dropdown menu and can be accessed at any time thoughout the game
 
 
-[**Possible Future Features**](#Futures-Features)
+## Possible Future Features
 
 1. Given that the topics are taken from a JSON file, there is scope to expand the topics available to any number of topics. This can be easily 
 implemented by adding to the JSON file and altering the code to generate a random number between 1 and "Size of new Json List"
@@ -324,11 +324,11 @@ There is scope to present the user with the poster when they get the answer corr
 
 ## Technologies Used 
 
-[**Languages Used**](#Languages-Used)
+## Languages Used 
 
 HTML5, CSS3, Javascript 
 
-[**Libraries Used**](#Libraries-Used)
+### Libraries Used
 * <a href="http://www.omdbapi.com/">OMDB API</a> - The ApI used to get movie title informaiton 
 * <a href="https://getbootstrap.com/">Bootstrap 4 </a> - Used for responsive design 
 * <a href="https://jquery.com/">JQuery </a> - DOM manupulation 
@@ -412,7 +412,7 @@ I took the following steps to deploy me project.
 2. Select the relevant repository (davidosongschool/GuessThatTitle)
 3. Selected the settings icon and scrolled down to GitHub Pages 
 4. Under the source tab, I selected Master Branch 
-5. I wasited a few minutes for the site to be uploaded to github pages and then tested to make sure it had deployed correctly. 
+5. I waited a few minutes for the site to be uploaded to github pages and then tested to make sure it had deployed correctly. 
 
 
 ## Credits 
