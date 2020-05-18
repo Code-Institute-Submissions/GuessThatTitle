@@ -30,7 +30,7 @@ You can access the answers by using Google Developer Tools and clicking on the c
 
 2. [**Features**](#features)
     - [**Features Implemented**](#Features-Implemented)
-    - [**Possible Future Features**](#Futures-Features)
+    - [**Possible Future Features**](#Possible-Future-Features)
 
 3. [**Technologies Used**](#technologies-used)
     - [**Languages Used**](#Languages-Used)
