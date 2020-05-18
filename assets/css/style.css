@@ -1,5 +1,9 @@
 /* 
 
+Guess That Title CSS Styling
+
+-- Table of Contents --
+
 1. Generic Styling 
 1.1 Loading Gif
 2. Navigation Bar
@@ -14,6 +18,8 @@
 7. Splash Screen (Game Over/Round Complete)
 8. How to play page
 9. About Page
+10. Media Queries 
+
 */
 
 /* Import google gont */
@@ -59,7 +65,7 @@
 }
 
 .loading-style {
-    padding-top: 200px;
+  padding-top: 200px;
 }
 
 /* 2. Nar-Bar */
@@ -199,10 +205,8 @@
 }
 
 .socials-list li:hover {
-    color: #e63946;
+  color: #e63946;
 }
-
-
 
 /* 4. Game Generals */
 
@@ -239,7 +243,6 @@
   color: black;
   font-size: 30px;
   text-shadow: 0px 1px 1px;
-
 }
 
 .skip-question-btn {
@@ -282,7 +285,7 @@
 }
 
 #correct {
-    color: green;
+  color: green;
 }
 
 /* 6.1 Timer Styling */
@@ -308,7 +311,7 @@
 
 .message-to-player {
   color: #212429;
- padding-top: 200px !important;
+  padding-top: 200px !important;
 }
 
 .message-icon-style {
@@ -319,17 +322,16 @@
   font-size: 25px;
   color: red;
   padding-left: 5px;
-  
 }
 
 .try-again {
-position: relative;
-width: 200px;
-height: 50px;
-background-color: #e63946;
-color: white;
-border-radius: 3px;
-box-shadow: 0 2px 2px;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  background-color: #e63946;
+  color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px;
 }
 
 /* 8. How to play page */
@@ -349,6 +351,7 @@ box-shadow: 0 2px 2px;
   background-color: #e63946;
   border-radius: 3px;
   display: inline-block;
+  position: relative;
 }
 
 .number-box-2 {
@@ -358,6 +361,7 @@ box-shadow: 0 2px 2px;
   background-color: #054a91;
   border-radius: 3px;
   display: inline-block;
+  position: relative;
 }
 
 .contain-theme {
@@ -402,25 +406,24 @@ box-shadow: 0 2px 2px;
 }
 
 .feature-container {
-    margin-top: 20px;
-    background-color: #054a91;
-    color: white;
-    width: 240px;
-    border-radius: 3px;
-    box-shadow: 0px 3px 3px;
+  margin-top: 20px;
+  background-color: #054a91;
+  color: white;
+  width: 240px;
+  border-radius: 3px;
+  box-shadow: 0px 3px 3px;
 }
 
-
 .feature-list li {
-    padding: 2px;
+  padding: 2px;
 }
 
 .fa-radiation {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.line{
-    background-color: white;
+.line {
+  background-color: white;
 }
 /* 9. About Page */
 
@@ -495,13 +498,13 @@ box-shadow: 0 2px 2px;
 }
 
 .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
 }
 
-/* media queries */
+/* 10. Media queries */
 
 @media (min-width: 576px) {
   .contain-menu {

@@ -33,6 +33,8 @@ time is cut in half. How many rounds can you complete before you run out of live
 
 4. [**Testing**](#testing)
 
+5. [**Deployment**](#deployment)
+
 ## UX
 
 ### [**Strategy**](#strategy)
@@ -213,7 +215,11 @@ Again, our colour scheme needs to be bright, fun, but not overwheling. For this 
 The copy for the website should be short and to the point. It should be easy to read against colours. 
 I have used these principles to guide the writing of copy for the website. 
 
+### Wireframes 
 
+Wireframes are included in the UX above. They can also be accessed at "/wireframes"
+
+Wireframes are only drawn in one resolution (mobile) because the site layout is identical on all screen sizes. 
 
 
 ## FEATURES
@@ -328,8 +334,7 @@ HTML5, CSS3, Javascript
 * <a href="https://www.emailjs.com/">EmailJS</a> - Sending emails from contact us form
 * <a href="https://github.com/">GitHub</a> - Used for version control and code hosting - Github pages used to host the final version of the game
 * <a href="https://gitpod.io/">GitPod</a> - Used as an online IDE
-
-// INCLUDE TESTING TECHNOLOGY USED HERE TOO!
+* <a href="https://jasmine.github.io/">Jasmine</a> - Framework used for testing 
 
 
 ## Testing 
@@ -387,3 +392,26 @@ I shared the beta version of the game with roughly ten individuals for feedback.
 - Issue: The 'How to Play' wasn't clear enough in terms of how the game works. Some users felt a bit confused when they first started playing 
 - Fix: The How to play section was made clearer, and the animcation of the answer being inputted was added. A list with number of lives and 
 when you will lose a life was also added to the How to Play page.
+
+
+## Deployment 
+
+* I used git init to initialise a local repository. 
+* I used git add . - to add the base directory of project code into the local git repository 
+* I used git commit -m ".." to commit to the local repository with a message containing information on the version 
+* I used git push to push the local repository to the remote repositiry on GitHub
+
+I took the following steps to deploy me project. 
+
+1. Login to Github 
+2. Select the relevant repository (davidosongschool/GuessThatTitle)
+3. Selected the settings icon and scrolled down to GitHub Pages 
+4. Under the source tab, I selected Master Branch 
+5. I wasited a few minutes for the site to be uploaded to github pages and then tested to make sure it had deployed correctly. 
+
+
+## Credits 
+
+* The data is sourced from the OMDB API 
+* Some audio files were generated in Audacity - Others are free to use samples downloaded from freesound.org 
+* All other content is original 

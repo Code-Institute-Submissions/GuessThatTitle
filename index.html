@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Guess That Title - The ultimate Movie Quiz</title>
+    <link rel="icon" href="/fav2.png" type="image/x-icon"/>
 	<!--Loader-->
 
 	<!-- Font Awesome CDN -->
@@ -35,7 +36,7 @@
 		integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous" />
 
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-	<script src="assets/js/siteloader.js"></script>
+	
 	<!--Email JS-->
 	<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
 	</script>
@@ -47,18 +48,6 @@
 </head>
 
 <body>
-	<div class="images-to-load d-none">
-		<img src="assets/images/bg/pop.png" alt="background" />
-    </div>
-
-		<div class="loading text-center">
-			<img
-        class="loading-style"
-        src="assets/images/loading/loading.gif"
-        alt="loading"
-      />
-    </div>
-
 			<!--NavBar-->
 			<div class="container-fluid nav-bar">
 				<div class="row">
@@ -70,7 +59,7 @@
 				</div>
 			</div>
 
-			<div class="container-fluid loaded-container d-none p-0">
+			<div class="container-fluid loaded-container p-0">
 				<!--displayvar class identifies elements that can be hidden and revealed (everything except NAV)-->
 				<div class="page-body text-center displayvar">
 					<div class="row">
@@ -108,9 +97,9 @@
 						<div class="col-12 text-center">
 							<h6>Follow us</h6>
 							<ul class="socials-list">
-								<li><i class="fab fa-facebook-square"></i></li>
-								<li><i class="fab fa-instagram-square"></i></li>
-								<li><i class="fab fa-twitter-square"></i></li>
+								<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -222,7 +211,7 @@
 						<div class="row">
 							<div class="col-12 text-center">
 				
-									<div class="number-box mr-2">1</div><h4>CHOOSE A THEME</h4>
+									<div class="number-box mr-2"><span class="complete-center">1</span></div><h4>CHOOSE A THEME</h4>
 							
 								<ul class="theme-example-list">
 									<li>
@@ -245,7 +234,7 @@
 							</div>
 							<div class="col-12 text-center">
 
-								<div class="number-box-2 mr-2">2</div><h4>GUESS THE TITLE</h4>
+								<div class="number-box-2 mr-2"><span class="complete-center">2</span></div><h4>GUESS THE TITLE</h4>
 
 								<div class="title-example-container m-auto">
 									<p class="complete-center exmaple-title-text">SCHOOL OF<br/>
