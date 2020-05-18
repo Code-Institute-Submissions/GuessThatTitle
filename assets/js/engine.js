@@ -50,7 +50,6 @@ $(".play-now-btn").click(function () {
 function startGame() {
   setVars();
   clearInterval(wordAnimation); // Stop animations on how-to page
-  console.log("Animations Stopped");
   getTopics();
   displayTopicChoice();
   $(".try-again").addClass("d-none"); // Remove try again button
@@ -58,7 +57,6 @@ function startGame() {
   $(".menu2").removeClass("d-none");
   $(".skip-question-btn").css("background-color", "#054a91"); // Reset Skip Button
   $("#message-icon").text(" "); // Get rid of lives icon
-  console.log("show menu");
 }
 
 // Set variable values for start of game
@@ -81,7 +79,7 @@ function displayTopicChoice() {
 function getTopics() {
   questionNumber = 1;
   clearInterval(timer); // Clear interval when new round is called
-  console.log("TIMER RESET");
+
   // Request the data from the json file
 
   function getData(setData) {
@@ -113,10 +111,6 @@ function getTopics() {
     var topicTwo = jsonData[Object.keys(jsonData)[y - 1]];
     var topicThree = jsonData[Object.keys(jsonData)[z - 1]];
 
-    console.log("X :" + x);
-    console.log("Y :" + y);
-    console.log("Z :" + z);
-
     // Set round number
     document.getElementById("round-number").innerHTML = roundPosition;
 
@@ -145,9 +139,8 @@ function generateQuestion() {
   var x;
   var y;
   // Called after data is gathered
-  console.log("Question Number: " + questionNumber);
+
   function callApi(cb) {
-    console.log("Getting data from page : " + pageNumber);
     var URL =
       "https://www.omdbapi.com/?apikey=c1466e63&s=" +
       topic +
@@ -214,19 +207,16 @@ function generateQuestion() {
 }
 
 function showQuestion() {
-  console.log("Array Output");
   console.log(questions);
   movieTitleData = questions[arrayPositionSelect - 1][0];
   movieYearData = questions[arrayPositionSelect - 1][1];
   // Make choose topic container disappear and start displaying questions
   // Use question number to select what data to manipulate
-  console.log("Movie Title: " + movieTitleData);
-  console.log("Movie Year: " + movieYearData);
 
   // Break down the data
   var titlewords = movieTitleData.split(" "); // Title stored in its own array
   var titlelength = titlewords.length;
-  console.log("Title lendth : " + titlelength);
+
   // Remove a random word from the title that isn't the topic word
 
   function removeWord() {
@@ -236,9 +226,7 @@ function showQuestion() {
       rand = Math.round(Math.random() * 10);
     } while (rand > titlelength || rand === 0);
     wordPosition = rand - 1; // Array start at 0
-    console.log("What we are trying to replace: " + titlewords[wordPosition]);
     answer = titlewords[wordPosition];
-    console.log("the current topic :" + topic);
     answer = answer.replace(/[#?!,:]/g, "");
     // Use answer length to generate string to replace missing word with
 
@@ -270,7 +258,6 @@ function showQuestion() {
       topic.toString().toLowerCase()
     ) {
       lengthOfWord = titlewords[wordPosition].length;
-      console.log(lengthOfWord);
       titlewords[wordPosition] = `${string}`;
     }
     // Problem might arise if the movie only has one word and it is the key word (end in infinite loop)
@@ -281,7 +268,6 @@ function showQuestion() {
         topic.toString().toLowerCase()
     ) {
       lengthOfWord = titlewords[wordPosition].length;
-      console.log(lengthOfWord);
       titlewords[wordPosition] = `${string}`;
     } else {
       removeWord(); // Call the function again if it choose the topic word
@@ -290,8 +276,6 @@ function showQuestion() {
 
   // Call random word - Pick a word to be replaced - check that the word is not the topic word - if it is restart the function - if not replace it with 'guess'
   removeWord();
-
-  console.log("question to be displayed: " + titlewords);
 
   // Build HTML
   // Remove Loading Giff
@@ -312,7 +296,6 @@ function showQuestion() {
 
   // Clear the timer
   clearInterval(timer);
-  console.log("TIMER RESET");
   // Start Timer when everything is ready
   startTimer();
 }
@@ -392,8 +375,6 @@ function restartTimer() {
 // When question is answered - move to next question
 function nextQuestion() {
   questionNumber++;
-  console.log("You are on question: " + questionNumber);
-  console.log("Lives: " + numberOfLives);
 
   // empty text area and remove message
   $("#correct").fadeIn(500).addClass("d-none");
@@ -474,7 +455,6 @@ function loseLife() {
       $("#lives").toggleClass("d-none");
       $(".lives-icon").toggleClass("d-none");
       x++;
-      console.log("X is");
     } else {
       clearInterval(shakeheart);
     }
@@ -544,8 +524,6 @@ $(".skip-question-btn").click(function () {
 });
 
 function startAnimations() {
-  console.log("Animation Started");
-
   // Check if interval has already been set - if it has then reset it
   if (typeof wordAnimation != null) {
     clearInterval(wordAnimation);
@@ -575,7 +553,6 @@ function startAnimations() {
         for (i = 0; i < 3; i++) {
           $("#" + lettersid[i]).text("_");
         }
-        console.log("Interval Stopped");
       }
     }
   }

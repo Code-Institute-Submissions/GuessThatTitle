@@ -14,6 +14,11 @@ time is cut in half. How many rounds can you complete before you run out of live
 </p>
 <h4 align="center">Try Out Guess That Title <a href="https://davidosongschool.github.io/GuessThatTitle/">HERE</a></h4>
 
+<h5 align="center">Answers for testing</h5>
+<p>For the purposes of testing this application, the object containing the answers to each round will be printed to the console.
+You can access the answers by using Google Developer Tools and clicking on the console tab.
+</p>
+
 ## Contents
 
 1. [**UX**](#ux)
